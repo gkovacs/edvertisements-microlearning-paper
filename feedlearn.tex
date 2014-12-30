@@ -1,90 +1,53 @@
-\documentclass{sigchi}
-
-% Use this command to override the default ACM copyright statement (e.g. for preprints). 
-% Consult the conference website for the camera-ready copyright statement.
-
+\documentclass{chi-ext}
+% Please be sure that you have the dependencies (i.e., additional LaTeX packages) to compile this example.
+% See http://personales.upv.es/luileito/chiext/
 
 %% EXAMPLE BEGIN -- HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP -- (July 22, 2013 - Paul Baumann)
-% \toappear{Permission to make digital or hard copies of all or part of this work for personal or classroom use is 	granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org. \\
+% \copyrightinfo{Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org. \\
 % {\emph{CHI'14}}, April 26--May 1, 2014, Toronto, Canada. \\
 % Copyright \copyright~2014 ACM ISBN/14/04...\$15.00. \\
 % DOI string from ACM form confirmation}
 %% EXAMPLE END -- HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP -- (July 22, 2013 - Paul Baumann)
 
-
-% Arabic page numbers for submission. 
-% Remove this line to eliminate page numbers for the camera ready copy
-% \pagenumbering{arabic}
-
-
-% Load basic packages
-\usepackage{balance}  % to better equalize the last page
-\usepackage{graphics} % for EPS, load graphicx instead
-\usepackage{times}    % comment if you want LaTeX's default font
-\usepackage{url}      % llt: nicely formatted URLs
-
-% llt: Define a global style for URLs, rather that the default one
-\makeatletter
-\def\url@leostyle{%
-  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\bf\ttfamily}}}
-\makeatother
-\urlstyle{leo}
-
-
-% To make various LaTeX processors do the right thing with page size.
-\def\pprw{8.5in}
-\def\pprh{11in}
-\special{papersize=\pprw,\pprh}
-\setlength{\paperwidth}{\pprw}
-\setlength{\paperheight}{\pprh}
-\setlength{\pdfpagewidth}{\pprw}
-\setlength{\pdfpageheight}{\pprh}
-
-% Make sure hyperref comes last of your loaded packages, 
-% to give it a fighting chance of not being over-written, 
-% since its job is to redefine many LaTeX commands.
-\usepackage[pdftex]{hyperref}
-\hypersetup{
-pdftitle={SIGCHI Conference Proceedings Format},
-pdfauthor={LaTeX},
-pdfkeywords={SIGCHI, proceedings, archival format},
-bookmarksnumbered,
-pdfstartview={FitH},
-colorlinks,
-citecolor=black,
-filecolor=black,
-linkcolor=black,
-urlcolor=black,
-breaklinks=true,
-}
-
-% create a shortcut to typeset table headings
-\newcommand\tabhead[1]{\small\textbf{#1}}
-
-
-% End of preamble. Here it comes the document.
-\begin{document}
-
 \title{FeedLearn: Using Social Feeds for Microlearning}
 
-\numberofauthors{3}
+\numberofauthors{1}
+% Notice how author names are alternately typesetted to appear ordered in 2-column format;
+% i.e., the first 4 autors on the first column and the other 4 auhors on the second column.
+% Actually, it's up to you to strictly adhere to this author notation.
 \author{
-  \alignauthor 1st Author Name\\
-    \affaddr{Affiliation}\\
-    \affaddr{Address}\\
-    \email{e-mail address}\\
-    \affaddr{Optional phone number}
-  \alignauthor 2nd Author Name\\
-    \affaddr{Affiliation}\\
-    \affaddr{Address}\\
-    \email{e-mail address}\\
-    \affaddr{Optional phone number}    
-  \alignauthor 3rd Author Name\\
-    \affaddr{Affiliation}\\
-    \affaddr{Address}\\
-    \email{e-mail address}\\
-    \affaddr{Optional phone number}
+  \alignauthor{
+  	\textbf{Geza Kovacs}\\
+  	\affaddr{Department of Computer Science, Stanford University}\\
+  	\email{geza@cs.stanford.edu}
+  }
 }
+
+% Paper metadata (use plain text, for PDF inclusion and later re-using, if desired)
+\def\plaintitle{FeedLearn: Using Social Feeds for Microlearning}
+\def\plainauthor{Geza Kovacs}
+\def\plainkeywords{microlearning, social feeds, language learning}
+\def\plaingeneralterms{microlearning, social feeds, language learning}
+
+\hypersetup{
+  % Your metadata go here
+  pdftitle={\plaintitle},
+  pdfauthor={\plainauthor},  
+  pdfkeywords={\plainkeywords},
+  pdfsubject={\plaingeneralterms},
+  % Quick access to color overriding:
+  %citecolor=black,
+  %linkcolor=black,
+  %menucolor=black,
+  %urlcolor=black,
+}
+
+\usepackage{graphicx}   % for EPS use the graphics package instead
+\usepackage{balance}    % useful for balancing the last columns
+\usepackage{bibspacing} % save vertical space in references
+
+
+\begin{document}
 
 \maketitle
 
@@ -96,21 +59,12 @@ engage in online media consumption that is unrelated to the user's work.
 Our system, FeedLearn, exploits the regularity with which people spend their idle time reading news feeds on Facebook,
 in order to present them with microlearning tasks. Unlike apps like Duolingo posting accomplishments in users' feeds, FeedLearn gives friends a simple call to action and allows them to participate in their friends' learning processes.
 In our first study, we find that over the course of 2 weeks, we are able to teach students N new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is X\% more than a control condition where we ask them to visit a separate website and ask them to study the words on their own time, and Y\% more than a control condition where we show friends' achievements via feed updates. In our second study, we find that giving friends the ability to participate in the social learning process, by suggesting words for their friends to learn, leads to increased engagement. They learn more words in a condition where the words learned are suggested to the group by their friends, which is X\% more than when they select words to choose by themselves, and Y\% more than when the suggestions are automatic.
-
 \end{abstract}
 
-\keywords{
-	microlearning; social feeds; language learning
-}
+\keywords{\plainkeywords}
 
 \category{H.5.m.}{Information Interfaces and Presentation (e.g. HCI)}{Miscellaneous}
 
-%See: \url{http://www.acm.org/about/class/1998/}
-%for more information and the full list of ACM classifiers
-%and descriptors. \newline
-%\textcolor{red}{Optional section to be included in your final version, 
-%but strongly encouraged. On the submission page only the classifiers’ 
-%letter-number combination will need to be entered.}
 
 \section{Introduction}
 
