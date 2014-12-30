@@ -68,11 +68,8 @@ In our first study, we find that over the course of 2 weeks, we are able to teac
 
 \section{Introduction}
 
-People spend large amounts of time online on activities not related to work,
-which is commonly referred to as ``cyberslacking''.
-Studies have found that the majority of internet time at work is spent cyberslacking,
-and that usage of social networking sites
-constitutes a large portion of cyberslacking activity, particularly among younger employees \cite{cyberslacking}. Over 90\% of college students use Facebook \cite{collegefacebook2}. College students who use Facebook report spending an average of 30 minutes per day on Facebook, and the majority check their news feeds 5-7 days each week \cite{collegefacebook}. Clearly, Facebook news feeds present an opportunity for influencing the behavior of users.
+People spend large amounts of time reading their news feeds on social networking sites like Facebook.
+71\% of American adults with an internet connection use Facebook. Of these, 63\% visit Facebook at least once a day, and 40\% visit it multiple times per day \cite{socialmediaupdate}. Among American college students, 90\% use Facebook \cite{collegefacebook2}. College students who use Facebook report spending an average of 30 minutes per day on Facebook \cite{collegefacebook}. Clearly, Facebook news feeds present an opportunity for influencing the behavior of users.
 
 In this paper, we present FeedLearn, a mechanism for allowing users to study flashcard-like content, such as vocabulary, as they browse through their Facebook feeds. We compared foreign-vocabulary acquisition rates through FeedLearn to simply asking users to study them on an external web service, and found that users learned X\% more vocabulary with FeedLearn.
 
@@ -88,16 +85,29 @@ The research questions we ask are:
 
 \section{Related Work}
 
+\subsection{Microlearning}
+
+Microlearning is a strategy of using short periods of time throughout the day to study. It has been used for applications such foreign vocabulary learning via mobile apps \cite{microlearning} \cite{micromandarin}. A weakness of needing a separate app for microlearning is that it requires the user to interrupt their routine and open an app to study. %vAlthough they may give users reminders when they should practice, these reminders might come at the wrong time, or be ignored.
+
+Some systems have attempted to solve this problem by embedding microlearning into other contexts. There are games where users complete learning tasks while playing \cite{carriearcade}, video players which teach vocabulary while watching foreign-language videos \cite{smartsubtitles}, screensavers that show facts while the screen is idle \cite{screensaver}, and chat clients that show vocabulary while the user is chatting \cite{waitlearning}.
+
+Compared to the learning contexts used by existing work, we believe the Facebook feed is an especially good opportunity for microlearning, because:
+
+\begin{itemize}
+\item Unlike playing educational games or watching foreign-language videos, visiting Facebook is part of the daily routine of nearly half of American adults with an internet connection \cite{socialmediaupdate} %, and the majority of college students \cite{collegefacebook}.
+\item Unlike a screensaver which is dismissed once the mouse moves, users can interact with quizzes they see in their Facebook feeds.
+\item Unlike needing to respond to a chat message, there are no interruptions to the user's learning while they are browsing their Facebook feeds.
+\item Users are already used to a variety of rich content appearing in their Facebook feeds, such as videos their friends liked, posts from games and apps, recommendations, and advertisements.
+\end{itemize}
+
 \subsection{News Feeds as a Persuasive Technology}
 
 Since the emergence of the Facebook app development platform, there have been
 many attempts to use it as a platform for persuasion. For example, apps like NikePlus broadcast users' running progress, and apps like Duolingo broadcast users' study progress on the platform. These messages may also invite the user's friends to participate in the activity. A key advantage that social platforms like Facebook provide over generic messaging is that friends can be associated with requests, increasing their potential persuasiveness via social pressures \cite{foggfacebook}.
 
-However, there are many caveats with applications auto-posting messages on users' behalves. Messages auto-posted by applications receive little attention from the user's friends, compared to messages that they have posted themselves. The user's audiences may also perceive their application-associated posts as either trivial achievements or bragging, ignoring them. It is thus suggested that these auto-posted messages be shared only with the subset of the user's social circles who are actually likely to engage with them \cite{socialsharing}. However, users are often reluctant to take the effort to identify these social circles.
+However, there are many caveats with applications auto-posting messages on users' behalves. Messages auto-posted by applications receive little attention from the user's friends, compared to messages that they have posted themselves. The user's audiences may also perceive their application-associated posts as either trivial achievements or bragging, ignoring them \cite{socialsharing}. It is thus suggested that these auto-posted messages be shared only with the subset of the user's social circles who are actually likely to engage with them. However, users are often reluctant to take the effort to identify these social circles \cite{socialsharing}.
 
-\subsection{Incorporating Learning Into Daily Routines}
-
-Microlearning is a strategy of using short periods of time throughout one's everyday daily routine to study. It has been used for in-context acquisition of foreign vocabulary from the environment \cite{microlearning} \cite{micromandarin}. Wait-Learning is a related strategy where idle seconds spent waiting, such as waiting for someone to respond to a chat message, are used to learn foreign-language vocabulary \cite{waitlearning}. ALOE is a system that allows users to learn foreign-language vocabulary while browsing the web, by replacing words in the user's native language with foreign-language vocabulary \cite{augmenting}.
+% ALOE is a system that allows users to learn foreign-language vocabulary while browsing the web, by replacing words in the user's native language with foreign-language vocabulary \cite{augmenting}. This work differs from existing microlearning systems by 
 
 \section{FeedLearn Interface}
 
