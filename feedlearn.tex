@@ -46,10 +46,20 @@
 \usepackage{balance}    % useful for balancing the last columns
 \usepackage{bibspacing} % save vertical space in references
 
+%\usepackage{tikz}
+\usepackage[absolute]{textpos}
+%\usepackage{float}
 
 \begin{document}
 
 \maketitle
+
+\begin{textblock}{5}(3.6,7.7)
+\begin{figure}
+\includegraphics[width=\columnwidth]{feedlearn-screenshot.png}
+\caption{FeedLearn showing an interactive vocabulary quiz inside a user's Facebook news feed}
+\end{figure}
+\end{textblock}
 
 \begin{abstract}
 Many long-term goals, such as learning a new language,
@@ -111,29 +121,31 @@ However, there are many caveats with applications auto-posting messages on users
 
 \section{FeedLearn Interface}
 
-\begin{figure*}
-\centering
-\includegraphics[width=2.0\columnwidth]{quiz1}
-\caption{One type of quiz presents a noun in the native language (the dog), and asks the user to select the correct translation into the foreign language (el perro).}
-\label{fig:quiz1}
-\end{figure*}
-
 FeedLearn is a Chrome extension which inserts small vocabulary quizzes into the user's Facebook feeds.
 
 \subsection{Quiz Types}
 
-These quizzes initially present a noun in the native language, and ask the user to select the corresponding foreign-language word, as shown in Figure~\ref{fig:quiz1}. In order to ensure that users learn to recognize the word associations in both ways, we also have a second type of quiz, in which the user is shown a word in the foreign language and selects the corresponding word in their native language, as shown in Figure~\ref{fig:quiz2}.
+These quizzes initially present a noun in the native language, and ask the user to select the corresponding foreign-language word, as shown in \autoref{fig:quiz1}. In order to ensure that users learn to recognize the word associations in both ways, we also have a second type of quiz, in which the user is shown a word in the foreign language and selects the corresponding word in their native language, as shown in \autoref{fig:quiz2}.
 
-\begin{figure*}
+\begin{figure}
 \centering
-\includegraphics[width=2.0\columnwidth]{quiz2}
-\caption{Another type of quiz presents a noun in the foreign language (el perro), and asks the user to select the correct translation into the native language (the dog).}
+\includegraphics[width=1.0\columnwidth]{quiz1}
+\caption{One type of quiz presents a noun in Japanese (\textit{jikan}), and asks the user to select its meaning (time).}
+\label{fig:quiz1}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{quiz2}
+\caption{Another type of quiz presents a noun in English (umbrella), and asks the user to select the correct translation into Japanese (\textit{kasa}). The user has incorrectly selected \textit{fukuro}, so the user is shown its meaning (bag), and tries again.}
 \label{fig:quiz2}
-\end{figure*}
+\end{figure}
 
-A picture is also presented alongside the foreign-language word, to help learners visually remember them. Prior research has shown that flashcards showing a picture along with the text allow learners to learn vocabulary better than text-only flashcards \cite{multimediavocabulary}. We focus on nouns, because they are the most common type of word -- the majority of words in the Oxford English dictionary are nouns \cite{microlearning} -- and they are relatively easy to visualize. This is the same quiz style used by Duolingo to introduce nouns.
+Our words and definitions were taken from the Nouns section of Wiktionary's 1000 Basic Japanese Words list. We excluded loanwords that users would easily recognize (\textit{pinku}=pink), and words that are homographs when romanized (\textit{hana}=flower or nose). We focus on nouns, because they are the most common type of word -- the majority of words in the Oxford English dictionary are nouns \cite{microlearning}. FeedLearn can optionally show the word in the native script (kana/kanji for Japanese), or display a picture of the word. However, we did not show these in our user study, because our users could not read Japanese scripts, and not all words can be visualized with a picture (ex: year).
 
-We opt to use this interactive quiz format, rather than simply showing pairs of words and translations or asking users to explicitly recall and type out translations for words, because it allows us to take advantage of the testing effect with a minimal amount of interaction (the user simply needs to click on a picture to answer). If the user answers a quiz correctly, a new quiz testing a different word is shown; in this way, they can engage with the vocabulary for as long a duration as they would like to.
+% A picture is also presented alongside the foreign-language word, to help learners visually remember them. Prior research has shown that flashcards showing a picture along with the text allow learners to learn vocabulary better than text-only flashcards \cite{multimediavocabulary}. We focus on nouns, because they are the most common type of word -- the majority of words in the Oxford English dictionary are nouns \cite{microlearning} -- and they are relatively easy to visualize. This is the same quiz style used by Duolingo to introduce nouns.
+
+We opt to use this interactive quiz format, rather than simply showing pairs of words and translations or asking users to explicitly recall and type out translations for words, because it allows us to take advantage of the testing effect with a minimal amount of interaction -- the user simply clicks on a word to answer. If the user clicks the wrong word, . If the user answers a quiz correctly, a new quiz testing a different word is shown. Thus, users can continue to study for as long as they wish to.
 
 \subsection{Quiz Generation}
 
