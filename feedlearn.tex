@@ -72,7 +72,7 @@ Our system, FeedLearn, exploits the regularity with which people spend their tim
 in order to present them with vocabulary quizzes they can answer directly inside their feeds.
 It is implemented as a Chrome extension, as Facebook's API does not currently allow such flexible
 in-feed interactions.
-In our preliminary user study, we find that over the course of 2 weeks, we are able to teach students an average of 11 new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is twice as much the 5 vocabulary words learned if we insert reminders to visit an external site and study, as is done by current Facebook apps.
+In our preliminary user study, we find that over the course of a week, we are able to teach students an average of 13 new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is more than the 4 vocabulary words learned if we insert links leading them to visit an external site to study, as is done by current Facebook apps.
 % Unlike apps like Duolingo posting accomplishments in users' feeds, FeedLearn gives friends a simple call to action and allows them to participate in their friends' learning processes.
 %In our first study, we find that over the course of 2 weeks, we are able to teach students N new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is X\% more than a control condition where we ask them to visit a separate website and ask them to study the words on their own time, and Y\% more than a control condition where we show friends' achievements via feed updates. In our second study, we find that giving friends the ability to participate in the social learning process, by suggesting words for their friends to learn, leads to increased engagement. They learn more words in a condition where the words learned are suggested to the group by their friends, which is X\% more than when they select words to choose by themselves, and Y\% more than when the suggestions are automatic.
 \end{abstract}
@@ -202,7 +202,7 @@ We conducted a preliminary user study to compare the effectiveness of inserting 
 
 \subsection{Participants}
 
-We recruited 13 users who had not previously studied Japanese, who were interested in learning some basic vocabulary. They were voluntary participants recruited from online Facebook groups. All of our participants were regular users of Facebook. %, spending at least 10 minutes on the site each day.
+We recruited 14 users who had not previously studied Japanese, who were interested in learning some basic vocabulary. They were voluntary participants recruited from online forums and Facebook groups related to Japanese culture. All of our participants were regular users of Facebook. %, spending at least 10 minutes on the site each day.
 
 % We recruited 30 college students with no prior exposure to Japanese, who were interested in learning some basic vocabulary in Japanese. All of our participants were regular users of Facebook, spending at least 10 minutes on the site each day.
 
@@ -227,11 +227,31 @@ Apart form the different items (quizzes vs links) inserted into user's feed, the
 
 \subsection{Procedure}
 
-The study is conducted entirely online. First, we asked the users to take a pre-test, to verify that they do not already know the vocabulary that we intend to teach them. In the pre-test, users tried matching the 50 Japanese words to their 50 English definitions. Then they installed our chrome extension and used it to learn the 50 words for a week. After a week elapsed, we asked them users to do the post-test, which had the same format as the pre-test.
+The study was conducted entirely online. First, we asked users to take a pre-test, to verify that they did not already know the vocabulary that we intended to teach them. In the pre-test, users tried matching the 50 Japanese words to their 50 English definitions. Then they installed our chrome extension and used it to learn the 50 words for a week. After a week elapsed, we asked them users to do the post-test, which had the same format as the pre-test.
 
 \section{Results}
 
-Average vocabulary pre-test and post-test scores are shown in Figure X.
+\subsection{Vocab Quiz Results}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{vocab-test-scores}
+\caption{Vocabulary test scores for the in-feed quiz and link conditions, with standard error bars}
+\label{fig:vocab-test-scores}
+\end{figure}
+
+Average vocabulary pre-test and post-test scores are shown in \autoref{fig:vocab-test-scores}. On average, users in the in-feed condition learned 13.2 new words, vs 2.5 in the link condition. However, this was not statistically significant (t=1.51, p=0.16).
+
+\subsection{Logged Interactions}
+
+The number of times users practiced answering quizzes is shown in \autoref{fig:event-logs}. We also kept track of ``study sessions'', which we defined as the number of times the user clicked on the link to visit the external website (in the link condition), or first answered a quiz that was inserted into their feed (in the in-quiz condition). Because there were a handful of extremely heavy Facebook users, we also show number of answers and sessions normalized by the number of feed insertions. On average, we found that users in the in-feed quiz condition answered significantly more quizzes than the link condition, and had more study sessions.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{event-logs-feedlearn}
+\caption{Average number of events logged per user for the in-feed quiz and link conditions.}
+\label{fig:event-logs}
+\end{figure}
 
 \section{Discussion}
 
