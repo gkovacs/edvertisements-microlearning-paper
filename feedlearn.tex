@@ -60,6 +60,7 @@
 \begin{figure}
 \includegraphics[width=\columnwidth]{feedlearn-screenshot.png}
 \caption{FeedLearn showing an interactive vocabulary quiz inside a user's Facebook news feed}
+\label{fig:feedlearn}
 \end{figure}
 \end{textblock}
 
@@ -68,7 +69,7 @@ Many long-term goals, such as learning a new language,
 require the person to spend a small amount of time each day to achieve them.
 At the same time, people regularly browse social news feeds in their spare time.
 Our system, FeedLearn, exploits the regularity with which people spend their time reading news feeds on Facebook,
-in order to present them with vocabulary quizzes they can answer directly inside the feed.
+in order to present them with vocabulary quizzes they can answer directly inside their feeds.
 It is implemented as a Chrome extension, as Facebook's API does not currently allow such flexible
 in-feed interactions.
 In our preliminary user study, we find that over the course of 2 weeks, we are able to teach students an average of 11 new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is twice as much the 5 vocabulary words learned if we insert reminders to visit an external site and study, as is done by current Facebook apps.
@@ -123,7 +124,7 @@ Compared to the learning contexts used by existing work, we believe the Facebook
 Since the emergence of the Facebook app development platform, there have been
 many attempts to use it as a platform for persuasion. For example, apps like NikePlus broadcast users' running progress, and apps like Duolingo broadcast users' study progress on the platform. These messages may also invite the user's friends to participate in the activity. A key advantage that social platforms like Facebook provide over generic messaging is that friends can be associated with requests, increasing their potential persuasiveness via social pressures \cite{foggfacebook}.
 
-However, there are many caveats with applications auto-posting messages on users' behalves. Messages auto-posted by applications receive little attention from the user's friends, compared to messages that they have posted themselves. The user's audiences may also perceive their application-associated posts as either trivial achievements or bragging, ignoring them \cite{socialsharing}. It is thus suggested that these auto-posted messages be shared only with the subset of the user's social circles who are actually likely to engage with them. However, users are reluctant to invest the effort to manage these social circles \cite{socialsharing}.
+However, there are many caveats with applications auto-posting messages on users' behalves. Messages auto-posted by applications receive little attention from the user's friends, compared to messages that they have posted themselves. The user's audiences may also perceive their application-associated posts as either trivial achievements or bragging, ignoring them \cite{socialsharing}. It is thus suggested that these auto-posted messages be shared only with the subset of the user's friends who are likely to be interested. However, users are unwilling to invest the effort to identify these social circles \cite{socialsharing}.
 
 \subsection{Study groups on Facebook}
 
@@ -148,11 +149,11 @@ There are a number of Facebook pages that post daily ``word of the day'' style l
 
 \section{FeedLearn Interface}
 
-FeedLearn is a Chrome extension which inserts small vocabulary quizzes into the user's Facebook feeds.
+FeedLearn is a Chrome extension which inserts interactive vocabulary quizzes into the user's Facebook feeds. It supports several languages, but we will focus on the version that teaches basic Japanese vocabulary in this paper.
 
 \subsection{Quiz Types}
 
-These quizzes initially present a noun in the native language, and ask the user to select the corresponding foreign-language word, as shown in \autoref{fig:quiz1}. In order to ensure that users learn to recognize the word associations in both ways, we also have a second type of quiz, in which the user is shown a word in the foreign language and selects the corresponding word in their native language, as shown in \autoref{fig:quiz2}.
+One type of quiz presents a present a noun in the native language, and ask the user to select the corresponding foreign-language word, as shown in \autoref{fig:quiz1}. In order to ensure that users learn to recognize the word associations in both ways, we also have a second type of quiz, in which the user is shown a word in the foreign language and selects the corresponding word in their native language, as shown in \autoref{fig:quiz2}.
 
 \begin{figure}
 \centering
@@ -168,15 +169,15 @@ These quizzes initially present a noun in the native language, and ask the user 
 \label{fig:quiz2}
 \end{figure}
 
-Our words and definitions were taken from the Nouns section of Wiktionary's 1000 Basic Japanese Words list. We excluded loanwords that users would easily recognize (\textit{pinku}=pink), and words that are homographs when romanized (\textit{hana}=flower or nose). We focus on nouns, because they are the most common type of word -- the majority of words in the Oxford English dictionary are nouns \cite{microlearning}. FeedLearn can optionally show the word in the native script (kana/kanji for Japanese), or display a picture of the word. However, we did not show these in our user study, because our users could not read Japanese scripts, and not all words can be visualized with a picture (ex: year).
-
 % A picture is also presented alongside the foreign-language word, to help learners visually remember them. Prior research has shown that flashcards showing a picture along with the text allow learners to learn vocabulary better than text-only flashcards \cite{multimediavocabulary}. We focus on nouns, because they are the most common type of word -- the majority of words in the Oxford English dictionary are nouns \cite{microlearning} -- and they are relatively easy to visualize. This is the same quiz style used by Duolingo to introduce nouns.
 
-We opt to use this interactive quiz format, rather than simply showing pairs of words and translations or asking users to explicitly recall and type out translations for words, because it allows us to take advantage of the testing effect with a minimal amount of interaction -- the user simply clicks on a word to answer. If the user clicks the wrong word, . If the user answers a quiz correctly, a new quiz testing a different word is shown. Thus, users can continue to study for as long as they wish to.
+We opt to use this interactive quiz format, rather than simply showing pairs of words and translations or asking users to explicitly recall and type out translations for words, because it allows us to take advantage of the testing effect with a minimal amount of interaction -- the user simply clicks on a word to answer. Once the user answers a quiz correctly, a new quiz testing a different word is shown. Thus, users can continue to study for as long as they wish to.
 
-\subsection{Quiz Generation}
+ \subsection{Quiz Generation}
 
-Quizzes are generated automatically from the provided English word. The other options are generated by looking up the word in WordNet \cite{wordnet}, to find related words that have similar category and semantics but have different meaning (for example, other animal names). The images are obtained by taking the first result on Google Images. We select the list of words to teach based on their overall usefulness in the language (as judged by word frequency in natural-language text).
+Our words and definitions were taken from the Nouns section of Wiktionary's 1000 Basic Japanese Words list. We excluded loanwords that users would easily recognize (\textit{pinku}=pink), and words that are homographs when romanized (\textit{hana}=flower or nose). We focus on nouns, because they are the most common type of word -- the majority of words in the Oxford English dictionary are nouns \cite{microlearning}. FeedLearn can optionally show the word in the native script (kana/kanji for Japanese), or display a picture of the word. However, we did not show these in our user study, because our users could not read Japanese scripts, and not all words can be visualized with a picture (ex: year).
+
+% Quizzes are generated automatically from the provided English word. The other options are generated by looking up the word in WordNet \cite{wordnet}, to find related words that have similar category and semantics but have different meaning (for example, other animal names). The images are obtained by taking the first result on Google Images. We select the list of words to teach based on their overall usefulness in the language (as judged by word frequency in natural-language text).
 
 \subsection{Spaced Repetition}
 
@@ -186,63 +187,87 @@ We use the Memreflex spaced-repetition algorithm to ensure that items are approp
 
 We insert quizzes into feeds so that they will be encountered at a rate of 1 quiz every 10 posts. We picked this rate, as this was similar to the frequency we observed advertisements and sponsored content appearing in Facebook news feeds. Hence, our should not distract users any more than existing advertisements. %on Facebook. % This is optimal because (need justification).
 
-\section{Evaluation}
+\section{Preliminary User Study}
 
-We conducted a weeklong between-subjects user study to evaluate the effectiveness of our system in teaching foreign-language vocabulary.
+We conducted a preliminary user study to compare the effectiveness of inserting interactive quizzes directly into users' Facebook feeds, versus inserting links to the quizzes as is commonly done on Facebook today. % We compared the 
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{feedlearn-link-screenshot}
+\caption{The control condition in our user study inserted a link into users' Facebook feeds that led them to a site where they could do vocabulary quizzes}
+\label{fig:control}
+\end{figure}
 
 % We conducted a 2-week between-subjects user study to evaluate the effectiveness of our system in teaching foreign-language vocabulary.
 
 \subsection{Participants}
 
-We recruited 13 users who had not previously studied Japanese, who were interested in learning some basic vocabulary. They were voluntary participants recruited from online groups. All of our participants were regular users of Facebook. %, spending at least 10 minutes on the site each day.
+We recruited 13 users who had not previously studied Japanese, who were interested in learning some basic vocabulary. They were voluntary participants recruited from online Facebook groups. All of our participants were regular users of Facebook. %, spending at least 10 minutes on the site each day.
 
 % We recruited 30 college students with no prior exposure to Japanese, who were interested in learning some basic vocabulary in Japanese. All of our participants were regular users of Facebook, spending at least 10 minutes on the site each day.
 
 \subsection{Materials}
 
-We selected the 30 most frequently used non-abstract nouns in Japanese, and generated flashcards automatically for them, according to the procedure described in the Quiz Generation section. We presented vocabulary words in romanized form rather than the standard Japanese orthography, to avoid difficulties resulting from unfamiliarity with the Japanese writing system.
+We used 50 basic Japanese words from Wiktionary's Basic Japanese Words list as the study material. We presented vocabulary words in romanized form rather than the standard Japanese orthography, as our users could not read Japanese scripts.
+
+%We selected the 30 most frequently used non-abstract nouns in Japanese, and generated flashcards automatically for them, according to the procedure described in the Quiz Generation section. We presented vocabulary words in romanized form rather than the standard Japanese orthography, to avoid difficulties resulting from unfamiliarity with the Japanese writing system.
 
 \subsection{Conditions}
 
-There were 3 conditions in our study. We assigned 10 students to each:
+Users were assigned to one of two conditions:
 
-\begin{itemize}
-\item FeedLearn: We inject the quizzes directly into the user's Facebook news feed
-\item External Service with In-Feed Reminders: We inject reminders into the news feed asking users to go visit a website where they can take a quiz. The quiz interface on the external website is identical to the one we would have injected directly into the feeds in the FeedLearn condition. The reminders in the feed occur at the same frequency as the quizzes would have been shown in the feeds. This is intended to resemble the experience that would be seen by users using Duolingo and other educational apps, if the users' friends had also enabled posting into their Facebook feeds.
-\item External Service with Daily Email Reminders: We give the user a link to the external quizzing service, and send them a daily email at 10AM asking them to go review vocabulary on the site.
-\end{itemize}
+\begin{compactitem}
+\item Users in the \textit{in-feed quiz} condition had quizzes inserted directly in their feeds, as shown in \autoref{fig:feedlearn}.
+\item Users in the \textit{link} condition had links inserted into their feed which led them to a site where they could do the quizzes, as shown in \autoref{fig:control}.
+\end{compactitem}
+
+Apart form the different items (quizzes vs links) inserted into user's feed, the questions and quiz interfaces were identical in the two conditions. In both conditions, the links/quizzes were inserted at a rate of 1 link/quiz per 10 feed items.
+
+% There were 3 conditions in our study. We assigned 10 students to each:
 
 \subsection{Procedure}
 
-The study is conducted entirely online. First, we ask the users to take a pre-test, to verify that they do not already know the vocabulary that we intend to teach them. The test is a multiple choice test: there are 30 questions total, with 15 questions where questions where the user is given the foreign-language word and is asked to select the correct English translation, and 15 questions where the user is given a word in English and is asked to select the correct foreign translation.
-
-Then, we have them install our extension have them use the service for 2 weeks (according to the condition they have been assigned to). After the 2 weeks have elapsed, we again ask them to take the vocabulary quiz.
-
-\subsection{Research Questions}
-
-H1: Do users learn more vocabulary in the FeedLearn condition than the other conditions?
-
-H2: Do user engage more (complete more quizzes) in the FeedLearn condition than the other conditions?
-
-H3: Do users enjoy the FeedLearn condition more than the other conditions?
+The study is conducted entirely online. First, we asked the users to take a pre-test, to verify that they do not already know the vocabulary that we intend to teach them. In the pre-test, users tried matching the 50 Japanese words to their 50 English definitions. Then they installed our chrome extension and used it to learn the 50 words for a week. After a week elapsed, we asked them users to do the post-test, which had the same format as the pre-test.
 
 \section{Results}
 
-H1: Hopefully, we find that the amount of vocabulary learned in the FeedLearn condition is greater than the other two conditions
-
-H2: Hopefully, we find the users engage more (complete more quizzes) in the FeedLearn condition than the other conditions.
-
-H3: Hopefully, we find that users find injection of quizzes directly into their Facebook feeds less distracting than injection of reminders for them to visit the site, or email-based reminders.
+Average vocabulary pre-test and post-test scores are shown in Figure X.
 
 \section{Discussion}
 
-Although in all 3 conditions, users receive daily reminders to go study vocabulary, we found that users complete more quizzes in the FeedLearn condition, and consequently learn more vocabulary.
+Some users mentioned that it was awkward to be immediately quizzed on words and would have preferred them to have been introduced first. 
 
-Relative to the External Service with In-Feed Reminders condition, we can attribute this to the reduced friction required for the interaction: the user no longer needs to leave their news feed and visit an external service to review vocabulary, so the barrier to engagement is lowered by inserting vocabulary quizzes directly into social feeds.
+In addition, there are many cases when items are seen in the feed, but not interacted with. In the in-feed condition, only X of Y items that were inserted in the feed were interacted with. In the link condition, only . In our next iteration of FeedLearn, we are addressing these by having a third type of item inserted into feeds that simply introduces a new word-definition pair, or serves to reinforce their memory of it.
 
-Relative to the External Service with Email Reminders condition, we can additionally attribute an advantage to being able to catch them when they are idle and free. While the user may be busy at 10AM and not have time when they receive the email to review the vocabulary, and will consequently have to remember to go visit the site at a later time, users in the FeedLearn condition have already indicated that they are free and idle because they are browsing their news feed, and are hence more likely to be available to review vocabulary when they encounter them in their feeds.
+% The study is conducted entirely online. First, we ask the users to take a pre-test, to verify that they do not already know the vocabulary that we intend to teach them. The test is a multiple choice test: there are 30 questions total, with 15 questions where questions where the user is given the foreign-language word and is asked to select the correct English translation, and 15 questions where the user is given a word in English and is asked to select the correct foreign translation.
 
-Users found the FeedLearn condition more enjoyable and less distracting than the External Service with Email Remdiners condition, because they were able to directly go engage with the quiz content, and were not distracted by unnecessary reminder emails.
+% Then, we have them install our extension have them use the service for 2 weeks (according to the condition they have been assigned to). After the 2 weeks have elapsed, we again ask them to take the vocabulary quiz.
+
+%\subsection{Research Questions}
+
+%H1: Do users learn more vocabulary in the FeedLearn condition than the other conditions?
+
+%H2: Do user engage more (complete more quizzes) in the FeedLearn condition than the other conditions?
+
+%H3: Do users enjoy the FeedLearn condition more than the other conditions?
+
+%\section{Results}
+
+%H1: Hopefully, we find that the amount of vocabulary learned in the FeedLearn condition is greater than the other two conditions
+
+%H2: Hopefully, we find the users engage more (complete more quizzes) in the FeedLearn condition than the other conditions.
+
+%H3: Hopefully, we find that users find injection of quizzes directly into their Facebook feeds less distracting than injection of reminders for them to visit the site, or email-based reminders.
+
+% \section{Discussion}
+
+% Although in all 3 conditions, users receive daily reminders to go study vocabulary, we found that users complete more quizzes in the FeedLearn condition, and consequently learn more vocabulary.
+
+% Relative to the External Service with In-Feed Reminders condition, we can attribute this to the reduced friction required for the interaction: the user no longer needs to leave their news feed and visit an external service to review vocabulary, so the barrier to engagement is lowered by inserting vocabulary quizzes directly into social feeds.
+
+% Relative to the External Service with Email Reminders condition, we can additionally attribute an advantage to being able to catch them when they are idle and free. While the user may be busy at 10AM and not have time when they receive the email to review the vocabulary, and will consequently have to remember to go visit the site at a later time, users in the FeedLearn condition have already indicated that they are free and idle because they are browsing their news feed, and are hence more likely to be available to review vocabulary when they encounter them in their feeds.
+
+% Users found the FeedLearn condition more enjoyable and less distracting than the External Service with Email Remdiners condition, because they were able to directly go engage with the quiz content, and were not distracted by unnecessary reminder emails.
 
 \section{Conclusion}
 
