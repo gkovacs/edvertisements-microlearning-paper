@@ -46,6 +46,8 @@
 \usepackage{balance}    % useful for balancing the last columns
 \usepackage{bibspacing} % save vertical space in references
 
+\usepackage{paralist}
+
 %\usepackage{tikz}
 \usepackage[absolute]{textpos}
 %\usepackage{float}
@@ -64,11 +66,14 @@
 \begin{abstract}
 Many long-term goals, such as learning a new language,
 require the person to spend a small amount of time each day to achieve them.
-At the same time, people regularly browse social news feeds in their spare time, or otherwise
-engage in online media consumption that is unrelated to the user's work.
-Our system, FeedLearn, exploits the regularity with which people spend their idle time reading news feeds on Facebook,
-in order to present them with microlearning tasks. Unlike apps like Duolingo posting accomplishments in users' feeds, FeedLearn gives friends a simple call to action and allows them to participate in their friends' learning processes.
-In our first study, we find that over the course of 2 weeks, we are able to teach students N new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is X\% more than a control condition where we ask them to visit a separate website and ask them to study the words on their own time, and Y\% more than a control condition where we show friends' achievements via feed updates. In our second study, we find that giving friends the ability to participate in the social learning process, by suggesting words for their friends to learn, leads to increased engagement. They learn more words in a condition where the words learned are suggested to the group by their friends, which is X\% more than when they select words to choose by themselves, and Y\% more than when the suggestions are automatic.
+At the same time, people regularly browse social news feeds in their spare time.
+Our system, FeedLearn, exploits the regularity with which people spend their time reading news feeds on Facebook,
+in order to present them with vocabulary quizzes they can answer directly inside the feed.
+It is implemented as a Chrome extension, as Facebook's API does not currently allow such flexible
+in-feed interactions.
+In our preliminary user study, we find that over the course of 2 weeks, we are able to teach students an average of 11 new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is twice as much the 5 vocabulary words learned if we insert reminders to visit an external site and study, as is done by current Facebook apps.
+% Unlike apps like Duolingo posting accomplishments in users' feeds, FeedLearn gives friends a simple call to action and allows them to participate in their friends' learning processes.
+%In our first study, we find that over the course of 2 weeks, we are able to teach students N new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is X\% more than a control condition where we ask them to visit a separate website and ask them to study the words on their own time, and Y\% more than a control condition where we show friends' achievements via feed updates. In our second study, we find that giving friends the ability to participate in the social learning process, by suggesting words for their friends to learn, leads to increased engagement. They learn more words in a condition where the words learned are suggested to the group by their friends, which is X\% more than when they select words to choose by themselves, and Y\% more than when the suggestions are automatic.
 \end{abstract}
 
 \keywords{\plainkeywords}
@@ -81,17 +86,20 @@ In our first study, we find that over the course of 2 weeks, we are able to teac
 People spend large amounts of time reading their news feeds on social networking sites like Facebook.
 71\% of American adults with an internet connection use Facebook. Of these, 63\% visit Facebook at least once a day, and 40\% visit it multiple times per day \cite{socialmediaupdate}. Among American college students, 90\% use Facebook \cite{collegefacebook2}. College students who use Facebook report spending an average of 30 minutes per day on Facebook \cite{collegefacebook}. Clearly, Facebook news feeds present an opportunity for influencing the behavior of users.
 
-In this paper, we present FeedLearn, a mechanism for allowing users to study flashcard-like content, such as vocabulary, as they browse through their Facebook feeds. We compared foreign-vocabulary acquisition rates through FeedLearn to simply asking users to study them on an external web service, and found that users learned X\% more vocabulary with FeedLearn.
+In this paper, we present FeedLearn, a technique for allowing users to interactively study flashcard-like content, such as vocabulary, as they browse through their Facebook feeds. Our research questions are:
 
-The research questions we ask are:
+\begin{compactitem}
+\item Are people more likely to engage with microlearning tasks if they can do so without leaving their Facebook feeds?
+\item Does the in-feed question study result in higher learning outcomes than the links to external sites used by current Facebook applications?
+\item Does the regularity and frequency with which users visit Facebook make it suitable for microlearning?
+%\item Are people more likely to learn if they are shown small, easily actionable learning tasks in the social feed. %, instead of messages emphasizing friends' overall achievements?
+%\item  Are people more likely to do flashcards that their friends suggested for them to do, as opposed to flashcards they selected themselves, or flashcards suggested by the system?
+%\item  Are people more likely to do flashcards that they suggested to their friends for them to do, as opposed to flashcards they selected only for themselves, or flashcards suggested by the system?
+%\item Does the act of suggesting words for friends to learn improve users' engagement with the system, or perceived satisfaction?
+%\item Does the selection process result in something useful?
+\end{compactitem}
 
-\begin{itemize}
-\item Are people more likely to learn if they are shown small, easily actionable learning tasks in the social feed, instead of messages emphasizing friends' overall achievements?
-\item  Are people more likely to do flashcards that their friends suggested for them to do, as opposed to flashcards they selected themselves, or flashcards suggested by the system?
-\item  Are people more likely to do flashcards that they suggested to their friends for them to do, as opposed to flashcards they selected only for themselves, or flashcards suggested by the system?
-\item Does the act of suggesting words for friends to learn improve users' engagement with the system, or perceived satisfaction?
-\item Does the selection process result in something useful?
-\end{itemize}
+Our preliminary user study compared Japanese vocabulary acquisition rates through FeedLearn's in-feed learning mechanism, to the style of inserting reminders to visit an external website to study, as is currently used by Facebook applications. We found that users were able to learn twice as many new words on average (11 new words, vs 5 new words) over a weeklong period when they could do the quizzes inside the feeds.
 
 \section{Related Work}
 
@@ -103,19 +111,38 @@ Some systems have attempted to solve this problem by embedding microlearning int
 
 Compared to the learning contexts used by existing work, we believe the Facebook feed is an especially good opportunity for microlearning, because:
 
-\begin{itemize}
+\begin{compactitem}
 \item Unlike playing educational games or watching foreign-language videos, visiting Facebook is part of the daily routine of nearly half of American adults with an internet connection \cite{socialmediaupdate} %, and the majority of college students \cite{collegefacebook}.
 \item Unlike a screensaver which is dismissed once the mouse moves, users can interact with quizzes they see in their Facebook feeds.
 \item Unlike needing to respond to a chat message, there are no interruptions to the user's learning while they are browsing their Facebook feeds.
 \item Users are already used to a variety of rich content appearing in their Facebook feeds, such as videos their friends liked, posts from games and apps, recommendations, and advertisements.
-\end{itemize}
+\end{compactitem}
 
 \subsection{News Feeds as a Persuasive Technology}
 
 Since the emergence of the Facebook app development platform, there have been
 many attempts to use it as a platform for persuasion. For example, apps like NikePlus broadcast users' running progress, and apps like Duolingo broadcast users' study progress on the platform. These messages may also invite the user's friends to participate in the activity. A key advantage that social platforms like Facebook provide over generic messaging is that friends can be associated with requests, increasing their potential persuasiveness via social pressures \cite{foggfacebook}.
 
-However, there are many caveats with applications auto-posting messages on users' behalves. Messages auto-posted by applications receive little attention from the user's friends, compared to messages that they have posted themselves. The user's audiences may also perceive their application-associated posts as either trivial achievements or bragging, ignoring them \cite{socialsharing}. It is thus suggested that these auto-posted messages be shared only with the subset of the user's social circles who are actually likely to engage with them. However, users are often reluctant to take the effort to identify these social circles \cite{socialsharing}.
+However, there are many caveats with applications auto-posting messages on users' behalves. Messages auto-posted by applications receive little attention from the user's friends, compared to messages that they have posted themselves. The user's audiences may also perceive their application-associated posts as either trivial achievements or bragging, ignoring them \cite{socialsharing}. It is thus suggested that these auto-posted messages be shared only with the subset of the user's social circles who are actually likely to engage with them. However, users are reluctant to invest the effort to manage these social circles \cite{socialsharing}.
+
+\subsection{Study groups on Facebook}
+
+There are a number of Facebook pages that post daily ``word of the day'' style lessons for learners, such as KoreanClass101. If users subscribe to these pages (by clicking the Like button), they will see periodic reminders to visit an external site to study vocabulary, as shown in \autoref{fig:learn-korean}. There are many users subscribed to these services -- for example, the KoreanClass101 page has 70 thousand subscribers. These services have a number of weaknesses that FeedLearn aims to address:
+
+\begin{compactitem}
+\item Not interactive: users need to visit an external site to do quizzes or see other words.
+\item Not personalized: all 70 thousand subscribers will see the same daily word posted, regardless of whether they already know that word.
+\item No spaced repetition: a new word is posted each day, and older ones are never repeated.
+\item Content needs to be manually generated: a group moderator needs to write a new post each day
+\end{compactitem}
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{learn-korean-post.png}
+\caption{An example Daily Word post from KoreanClass101, a Facebook service with 70 thousand subscribers.}
+\label{fig:learn-korean}
+\end{figure}
+
+% because . These services also generally rely on an external site for 
 
 % ALOE is a system that allows users to learn foreign-language vocabulary while browsing the web, by replacing words in the user's native language with foreign-language vocabulary \cite{augmenting}. This work differs from existing microlearning systems by 
 
@@ -153,19 +180,23 @@ Quizzes are generated automatically from the provided English word. The other op
 
 \subsection{Spaced Repetition}
 
-We use a spaced-repetition algorithm to ensure that the words are encountered at the appropriate frequency, so that users will remember them.
+We use the Memreflex spaced-repetition algorithm to ensure that items are appropriately spaced for review, and new items are introduced only once the user is ready to learn more \cite{memreflex}. However, we show the word due for review that has been seen least recently in the feed, as opposed to always showing the most overdue word as Memreflex does. This ensures that users will continue to see different words as they are scrolling through their feeds, even if they are not always answering the quiz questions.
 
 \subsection{Inserting Quizzes into Feeds}
 
-We insert quizzes into feeds so that they will be encountered at a rate of N quizzes per 100 posts. This is optimal because (need justification).
+We insert quizzes into feeds so that they will be encountered at a rate of 1 quiz every 10 posts. We picked this rate, as this was similar to the frequency we observed advertisements and sponsored content appearing in Facebook news feeds. Hence, our should not distract users any more than existing advertisements. %on Facebook. % This is optimal because (need justification).
 
 \section{Evaluation}
 
-We conducted a 2-week between-subjects user study to evaluate the effectiveness of our system in teaching foreign-language vocabulary.
+We conducted a weeklong between-subjects user study to evaluate the effectiveness of our system in teaching foreign-language vocabulary.
+
+% We conducted a 2-week between-subjects user study to evaluate the effectiveness of our system in teaching foreign-language vocabulary.
 
 \subsection{Participants}
 
-We recruited 30 college students with no prior exposure to Japanese, who were interested in learning some basic vocabulary in Japanese. All of our participants were regular users of Facebook, spending at least 10 minutes on the site each day.
+We recruited 13 users who had not previously studied Japanese, who were interested in learning some basic vocabulary. They were voluntary participants recruited from online groups. All of our participants were regular users of Facebook. %, spending at least 10 minutes on the site each day.
+
+% We recruited 30 college students with no prior exposure to Japanese, who were interested in learning some basic vocabulary in Japanese. All of our participants were regular users of Facebook, spending at least 10 minutes on the site each day.
 
 \subsection{Materials}
 
