@@ -9,7 +9,7 @@
 % DOI string from ACM form confirmation}
 %% EXAMPLE END -- HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP -- (July 22, 2013 - Paul Baumann)
 
-\title{FeedLearn: Using Social Feeds for Microlearning}
+\title{FeedLearn: Using Facebook Feeds for Microlearning}
 
 \numberofauthors{1}
 % Notice how author names are alternately typesetted to appear ordered in 2-column format;
@@ -24,10 +24,10 @@
 }
 
 % Paper metadata (use plain text, for PDF inclusion and later re-using, if desired)
-\def\plaintitle{FeedLearn: Using Social Feeds for Microlearning}
+\def\plaintitle{FeedLearn: Using Facebook Feeds for Microlearning}
 \def\plainauthor{Geza Kovacs}
-\def\plainkeywords{microlearning, social feeds, language learning}
-\def\plaingeneralterms{microlearning, social feeds, language learning}
+\def\plainkeywords{microlearning, social feeds, facebook, language learning}
+\def\plaingeneralterms{microlearning, social feeds, facebok, language learning}
 
 \hypersetup{
   % Your metadata go here
@@ -65,18 +65,7 @@
 \end{textblock}
 
 \begin{abstract}
-Many long-term goals, such as learning a new language,
-require the person to spend a small amount of time each day to achieve them.
-At the same time, people regularly browse social news feeds in their spare time.
-Our system, FeedLearn, exploits the regularity with which people spend their time reading news feeds on Facebook,
-in order to present them with vocabulary quizzes they can answer directly inside their feeds.
-It is implemented as a Chrome extension, as Facebook's API does not currently allow third-party developers to insert such interactive content into feeds.
-In our preliminary user study, we compared Japanese vocabulary learning rates
-among beginners when quizzes were inserted directly into feeds, as opposed to
-inserting links reminding them to study, as is currently done by Facebook apps.
-We find that on average, 
-users answer more quizzes and learn more vocabulary
-when the quizzes can be done without leaving their feeds.
+Many long-term goals, such as learning a language, require people to spend a small amount of time each day to achieve them. At the same time, people regularly browse social news feeds in their spare time. Our system, FeedLearn, teaches vocabulary in the context of Facebook feeds, by showing users interactive quizzes they can answer without leaving their feeds. It is implemented as a Chrome extension, as Facebook's API does not currently allow developers to insert interactive content into feeds. In our preliminary user study, we compared Japanese vocabulary learning rates when quizzes were inserted directly into feeds, as opposed to inserting links that lead them to the quizzes. Our results suggest that users learn more and engage more with microlearning tasks when quizzes can be done without leaving their feeds.
 % In our preliminary user study, we find that over the course of a week, we are able to teach students an average of 13 new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is more than the 4 vocabulary words learned if we insert links leading them to visit an external site to study, as is done by current Facebook apps.
 % Unlike apps like Duolingo posting accomplishments in users' feeds, FeedLearn gives friends a simple call to action and allows them to participate in their friends' learning processes.
 %In our first study, we find that over the course of 2 weeks, we are able to teach students N new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is X\% more than a control condition where we ask them to visit a separate website and ask them to study the words on their own time, and Y\% more than a control condition where we show friends' achievements via feed updates. In our second study, we find that giving friends the ability to participate in the social learning process, by suggesting words for their friends to learn, leads to increased engagement. They learn more words in a condition where the words learned are suggested to the group by their friends, which is X\% more than when they select words to choose by themselves, and Y\% more than when the suggestions are automatic.
@@ -86,6 +75,7 @@ when the quizzes can be done without leaving their feeds.
 
 \category{H.5.m.}{Information Interfaces and Presentation (e.g. HCI)}{Miscellaneous}
 
+\newpage
 
 \section{Introduction}
 
@@ -156,11 +146,11 @@ There are a number of Facebook pages that post daily ``word of the day'' style l
 
 \section{FeedLearn Interface}
 
-FeedLearn is a Chrome extension which inserts interactive vocabulary quizzes into the user's Facebook feeds, as shown in \autoref{fig:feedlearn}. It supports several languages, but we will focus on the version that teaches basic Japanese vocabulary in this paper.
+FeedLearn inserts interactive vocabulary quizzes in users' Facebook feeds, as shown in \autoref{fig:feedlearn}. It is implemented as a Chrome extension, as Facebook's API does not currently allow developers to insert interactive content into feeds. FeedLearn supports multiple languages, but this paper will focus on the version that teaches basic Japanese nouns.
 
 \subsection{Quiz Types}
 
-One type of quiz presents a present a noun in the native language, and ask the user to select the corresponding foreign-language word, as shown in \autoref{fig:quiz1}. In order to ensure that users learn to recognize the word associations in both ways, we also have a second type of quiz, in which the user is shown a word in the foreign language and selects the corresponding word in their native language, as shown in \autoref{fig:quiz2}.
+One type of quiz presents a present a noun in English, and ask the user to select the corresponding Japanese word, as shown in \autoref{fig:quiz1}. To ensure that users learn to recognize the word associations in both ways, we also have a second type of quiz, in which the user is shown a word in Japanese and selects the corresponding word in English, as shown in \autoref{fig:quiz2}.
 
 We opted to use this multiple-choice quiz format, because it tests the user's knowledge with a minimal amount of interaction -- the user simply clicks on a word to answer. Once the user answers a quiz correctly, a new quiz testing a different word is shown. Thus, users can continue to study vocabulary in their feed for as long as they wish to.
 
@@ -211,7 +201,7 @@ We conducted a preliminary user study to compare the effectiveness of inserting 
 
 \subsection{Participants}
 
-We recruited 14 users who had not previously studied Japanese but were interested in learning some basic vocabulary. They were voluntary participants recruited from online forums and Facebook groups related to Japanese culture. All of our participants were regular users of Facebook. %, spending at least 10 minutes on the site each day.
+We recruited 12 users who had not previously studied Japanese but were interested in learning some basic vocabulary. They were voluntary participants recruited from online forums and Facebook groups related to Japanese culture. All of our participants were regular users of Facebook. %, spending at least 10 minutes on the site each day.
 
 % We recruited 30 college students with no prior exposure to Japanese, who were interested in learning some basic vocabulary in Japanese. All of our participants were regular users of Facebook, spending at least 10 minutes on the site each day.
 
@@ -249,7 +239,7 @@ The study was conducted entirely online. First, users took a pre-test on the wor
 \label{fig:vocab-test-scores}
 \end{figure}
 
-Average vocabulary pre-test and post-test scores are shown in \autoref{fig:vocab-test-scores}. On average, users in the in-feed condition learned 13.2 new words, vs 2.5 in the link condition. However, this was not statistically significant (t=1.51, p=0.16).
+Average vocabulary pre-test and post-test scores are shown in \autoref{fig:vocab-test-scores}. On average, users in the in-feed condition learned 13.2 new words, compared to 2.5 new words learned in the link condition. However, this was not statistically significant (t=1.51, p=0.16).
 
 \subsection{Logged Interactions}
 
@@ -266,9 +256,15 @@ Some users mentioned that they would have preferred words to have been explicitl
 
 \section{Conclusion}
 
-Injecting small, actionable tasks into users' Facebook feeds presents an opportunity to influence behavior. Although we have studied foreign-language vocabulary acquisition in this study, our approaches can potentially be extended to other flashcard-like educational content that can be interacted with directly inside a social news feed. One could also use a similar mechanism to encourage other behaviors that need to be done for short periods of time on a daily basis, such as small amounts of exercise.
+FeedLearn uses Facebook feeds for vocabulary microlearning.
+By eliminating the need to leave the Facebook feed to do quizzes, FeedLearn reduces the barrier
+required to start microlearning tasks. Our user study found that eliminating the need to click a link to start studying vocabulary results in increased engagement.
 
-Future work that remains to be done includes using an adaptive model to determine the optimal times to insert microlearning tasks into feeds. Another potential extension of this work is making the microlearning tasks more integrated with the Facebook environment to create a more social in-feed learning experience.
+Although FeedLearn focuses on vocabulary learning, this approach can potentially be applied to other educational content, or even be used to encourage other small, actionable behaviors such as microexercise. Potential future work includes using an adaptive model to determine the optimal times to insert microlearning tasks into feeds. Another potential extension of this work is making the microlearning tasks more integrated with the Facebook environment to create a more social in-feed learning experience.
+
+%Although we have focused on vocabulary learning, this approach can potentially be applied to other educational content, or even be used to encourage other small, actionable behaviors such as microexercise. % One could also use a similar mechanism to encourage other behaviors that need to be done for short periods of time on a daily basis, such as small amounts of exercise.
+
+%Potential future work includes using an adaptive model to determine the optimal times to insert microlearning tasks into feeds. Another potential extension of this work is making the microlearning tasks more integrated with the Facebook environment to create a more social in-feed learning experience.
 
 % The study is conducted entirely online. First, we ask the users to take a pre-test, to verify that they do not already know the vocabulary that we intend to teach them. The test is a multiple choice test: there are 30 questions total, with 15 questions where questions where the user is given the foreign-language word and is asked to select the correct English translation, and 15 questions where the user is given a word in English and is asked to select the correct foreign translation.
 
