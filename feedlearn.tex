@@ -102,6 +102,12 @@
 %\end{figure}
 %\end{textblock}
 
+\begin{figure}
+\includegraphics[width=\columnwidth]{feedlearn-screenshot.png}
+\caption{FeedLearn showing an interactive vocabulary quiz inside a user's Facebook news feed}
+\label{fig:feedlearn}
+\end{figure}
+
 \begin{abstract}
 Many long-term goals, such as learning a language, require people to spend a small amount of time each day to achieve them. At the same time, people regularly browse social news feeds in their spare time. Our system, FeedLearn, teaches vocabulary in the context of Facebook feeds, by showing users interactive quizzes they can answer without leaving their feeds. It is implemented as a Chrome extension, as Facebook's API does not currently allow developers to insert interactive content into feeds. In our preliminary user study, we compared Japanese vocabulary learning rates when interactive quizzes were inserted directly into feeds, versus inserting links that lead them to quizzes. Our results suggest that users learn more and engage more with microlearning tasks when quizzes can be done without leaving their feeds.
 % In our preliminary user study, we find that over the course of a week, we are able to teach students an average of 13 new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is more than the 4 vocabulary words learned if we insert links leading them to visit an external site to study, as is done by current Facebook apps.
@@ -161,9 +167,11 @@ Many apps attempt to use Facebook feeds as a persuasive technology. For example,
 
 However, there are many caveats with such applications auto-posting messages on users' feeds. Messages auto-posted by applications receive little attention from the user's friends, compared to messages that they have posted themselves. Viewers may perceive these posts as either trivial achievements or bragging, ignoring them \cite{socialsharing}. % It is thus suggested that these auto-posted messages be shared only with the subset of the user's friends who are likely to be interested. However, users are unwilling to invest the effort to identify these social circles \cite{socialsharing}.
 
-\subsection{Study groups on Facebook}
+%\subsection{Study groups on Facebook}
 
-There are a number of Facebook pages that post daily ``word of the day'' style lessons for learners, such as KoreanClass101. If users subscribe to these pages (by clicking the Like button), they will see periodic reminders to visit an external site to study vocabulary, as shown in \autoref{fig:learn-korean}. These services have a number of weaknesses that FeedLearn aims to address:
+%There are a number of Facebook pages that post daily ``word of the day'' style lessons for learners, such as KoreanClass101. If users subscribe to these pages (by clicking the Like button), they will see periodic reminders to visit an external site to study vocabulary. These services have a number of weaknesses that FeedLearn aims to address:
+
+% There are a number of Facebook pages that post daily ``word of the day'' style lessons for learners, such as KoreanClass101. If users subscribe to these pages (by clicking the Like button), they will see periodic reminders to visit an external site to study vocabulary, as shown in \autoref{fig:learn-korean}. These services have a number of weaknesses that FeedLearn aims to address:
 
 %\marginpar{
 %\begin{figure}
@@ -173,12 +181,12 @@ There are a number of Facebook pages that post daily ``word of the day'' style l
 %\end{figure}
 %}
 
-\begin{compactitem}
-\item Not interactive: users need to visit an external site to do quizzes or see other words.
-\item Not personalized: all 70 thousand subscribers will see the same daily word posted, regardless of whether they already know that word.
-\item No spaced repetition: a new word is posted each day, and older words are never repeated.
-\item Content needs to be manually generated: a group moderator needs to write a new post each day
-\end{compactitem}
+%\begin{compactitem}
+%\item Not interactive: users need to visit an external site to do quizzes or see other words.
+%\item Not personalized: all 70 thousand subscribers will see the same daily word posted, regardless of whether they already know that word.
+%\item No spaced repetition: a new word is posted each day, and older words are never repeated.
+%\item Content needs to be manually generated: a group moderator needs to write a new post each day
+%\end{compactitem}
 
 % because . These services also generally rely on an external site for 
 
