@@ -1,72 +1,106 @@
-\documentclass{chi-ext}
-% Please be sure that you have the dependencies (i.e., additional LaTeX packages) to compile this example.
-% See http://personales.upv.es/luileito/chiext/
+\documentclass{sigchi}
+
+% Use this command to override the default ACM copyright statement
+% (e.g. for preprints).  Consult the conference website for the
+% camera-ready copyright statement.
+
 
 %% EXAMPLE BEGIN -- HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP -- (July 22, 2013 - Paul Baumann)
-\copyrightinfo{Permission to make digital or hard copies of part or all of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for third-party components of this work must be honored. For all other uses, contact the Owner/Author. Copyright is held by the owner/author(s).\\
-CHI'15 Extended Abstracts, Apr 18-23, 2015, Seoul, Republic of Korea\\
-ACM 978-1-4503-3146-3/15/04.\\
-http://dx.doi.org/10.1145/2702613.2732775}
-% \copyrightinfo{Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org. \\
+% \toappear{Permission to make digital or hard copies of all or part of this work for personal or classroom use is      granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org. \\
 % {\emph{CHI'14}}, April 26--May 1, 2014, Toronto, Canada. \\
 % Copyright \copyright~2014 ACM ISBN/14/04...\$15.00. \\
 % DOI string from ACM form confirmation}
 %% EXAMPLE END -- HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP -- (July 22, 2013 - Paul Baumann)
 
-\title{FeedLearn: Using Facebook Feeds for Microlearning}
 
-\numberofauthors{1}
-% Notice how author names are alternately typesetted to appear ordered in 2-column format;
-% i.e., the first 4 autors on the first column and the other 4 auhors on the second column.
-% Actually, it's up to you to strictly adhere to this author notation.
-\author{
-  \alignauthor{
-  	\textbf{Geza Kovacs}\\
-  	\affaddr{Department of Computer Science, Stanford University}\\
-  	\email{geza@cs.stanford.edu}
-  }
-}
+% Arabic page numbers for submission.  Remove this line to eliminate
+% page numbers for the camera ready copy 
 
-% Paper metadata (use plain text, for PDF inclusion and later re-using, if desired)
-\def\plaintitle{FeedLearn: Using Facebook Feeds for Microlearning}
-\def\plainauthor{Geza Kovacs}
-\def\plainkeywords{microlearning, social feeds, facebook, language learning}
-\def\plaingeneralterms{microlearning, social feeds, facebok, language learning}
+%\pagenumbering{arabic}
 
-\hypersetup{
-  % Your metadata go here
-  pdftitle={\plaintitle},
-  pdfauthor={\plainauthor},  
-  pdfkeywords={\plainkeywords},
-  pdfsubject={\plaingeneralterms},
-  % Quick access to color overriding:
-  %citecolor=black,
-  %linkcolor=black,
-  %menucolor=black,
-  %urlcolor=black,
-}
-
-\usepackage{graphicx}   % for EPS use the graphics package instead
-\usepackage{balance}    % useful for balancing the last columns
-\usepackage{bibspacing} % save vertical space in references
+% Load basic packages
+\usepackage{balance}  % to better equalize the last page
+\usepackage{graphics} % for EPS, load graphicx instead 
+%\usepackage[T1]{fontenc}
+\usepackage{txfonts}
+\usepackage{times}    % comment if you want LaTeX's default font
+\usepackage[pdftex]{hyperref}
+% \usepackage{url}      % llt: nicely formatted URLs
+\usepackage{color}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{ccicons}
+\usepackage{todonotes}
 
 \usepackage{paralist}
 
-%\usepackage{tikz}
-\usepackage[absolute]{textpos}
-%\usepackage{float}
+% llt: Define a global style for URLs, rather that the default one
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\bf\ttfamily}}}
+\makeatother
+\urlstyle{leo}
 
+% To make various LaTeX processors do the right thing with page size.
+\def\pprw{8.5in}
+\def\pprh{11in}
+\special{papersize=\pprw,\pprh}
+\setlength{\paperwidth}{\pprw}
+\setlength{\paperheight}{\pprh}
+\setlength{\pdfpagewidth}{\pprw}
+\setlength{\pdfpageheight}{\pprh}
+
+% Make sure hyperref comes last of your loaded packages, to give it a
+% fighting chance of not being over-written, since its job is to
+% redefine many LaTeX commands.
+\definecolor{linkColor}{RGB}{6,125,233}
+\hypersetup{%
+  pdftitle={FeedLearn: Using Facebook Feeds for Microlearning},
+  pdfauthor={LaTeX},
+  pdfkeywords={SIGCHI, proceedings, archival format},
+  bookmarksnumbered,
+  pdfstartview={FitH},
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=linkColor,
+  breaklinks=true,
+}
+
+% create a shortcut to typeset table headings
+% \newcommand\tabhead[1]{\small\textbf{#1}}
+
+% End of preamble. Here it comes the document.
 \begin{document}
+
+\title{FeedLearn: Using Facebook Feeds for Microlearning}
+
+\numberofauthors{3}
+\author{%
+  \alignauthor{1st Author Name\\
+    \affaddr{Affiliation}\\
+    \affaddr{City, Country}\\
+    \email{e-mail address}}\\
+  \alignauthor{2nd Author Name\\
+    \affaddr{Affiliation}\\
+    \affaddr{City, Country}\\
+    \email{e-mail address}}\\
+  \alignauthor{3rd Author Name\\
+    \affaddr{Affiliation}\\
+    \affaddr{City, Country}\\
+    \email{e-mail address}}\\
+}
 
 \maketitle
 
-\begin{textblock}{5}(3.6,7.7)
-\begin{figure}
-\includegraphics[width=\columnwidth]{feedlearn-screenshot.png}
-\caption{FeedLearn showing an interactive vocabulary quiz inside a user's Facebook news feed}
-\label{fig:feedlearn}
-\end{figure}
-\end{textblock}
+%\begin{textblock}{5}(3.6,7.7)
+%\begin{figure}
+%\includegraphics[width=\columnwidth]{feedlearn-screenshot.png}
+%\caption{FeedLearn showing an interactive vocabulary quiz inside a user's Facebook news feed}
+%\label{fig:feedlearn}
+%\end{figure}
+%\end{textblock}
 
 \begin{abstract}
 Many long-term goals, such as learning a language, require people to spend a small amount of time each day to achieve them. At the same time, people regularly browse social news feeds in their spare time. Our system, FeedLearn, teaches vocabulary in the context of Facebook feeds, by showing users interactive quizzes they can answer without leaving their feeds. It is implemented as a Chrome extension, as Facebook's API does not currently allow developers to insert interactive content into feeds. In our preliminary user study, we compared Japanese vocabulary learning rates when interactive quizzes were inserted directly into feeds, versus inserting links that lead them to quizzes. Our results suggest that users learn more and engage more with microlearning tasks when quizzes can be done without leaving their feeds.
@@ -75,11 +109,11 @@ Many long-term goals, such as learning a language, require people to spend a sma
 %In our first study, we find that over the course of 2 weeks, we are able to teach students N new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is X\% more than a control condition where we ask them to visit a separate website and ask them to study the words on their own time, and Y\% more than a control condition where we show friends' achievements via feed updates. In our second study, we find that giving friends the ability to participate in the social learning process, by suggesting words for their friends to learn, leads to increased engagement. They learn more words in a condition where the words learned are suggested to the group by their friends, which is X\% more than when they select words to choose by themselves, and Y\% more than when the suggestions are automatic.
 \end{abstract}
 
-\keywords{\plainkeywords}
+\keywords{microlearning; social feeds; facebook; language learning}
 
 \category{H.5.m.}{Information Interfaces and Presentation (e.g. HCI)}{Miscellaneous}
 
-\newpage
+%\newpage
 
 \section{Introduction}
 
@@ -131,13 +165,13 @@ However, there are many caveats with such applications auto-posting messages on 
 
 There are a number of Facebook pages that post daily ``word of the day'' style lessons for learners, such as KoreanClass101. If users subscribe to these pages (by clicking the Like button), they will see periodic reminders to visit an external site to study vocabulary, as shown in \autoref{fig:learn-korean}. These services have a number of weaknesses that FeedLearn aims to address:
 
-\marginpar{
-\begin{figure}
-\includegraphics[width=\marginparwidth]{learn-korean-post.png}
-\caption{An example Daily Word post from KoreanClass101, a Facebook service with 70 thousand subscribers.}
-\label{fig:learn-korean}
-\end{figure}
-}
+%\marginpar{
+%\begin{figure}
+%\includegraphics[width=\marginparwidth]{learn-korean-post.png}
+%\caption{An example Daily Word post from KoreanClass101, a Facebook service with 70 thousand subscribers.}
+%\label{fig:learn-korean}
+%\end{figure}
+%}
 
 \begin{compactitem}
 \item Not interactive: users need to visit an external site to do quizzes or see other words.
@@ -275,9 +309,9 @@ Although we have focused on vocabulary, other content could also be microlearned
 
 Future work includes using a model to determine the optimal times to insert microlearning tasks into feeds. Another potential extension is making the microlearning tasks more integrated with the Facebook environment to create a more social in-feed learning experience. %Future work includes better integrating the microlearning tasks with the the social nature of the Facebook environment to create a richer in-feed learning experience.
 
-\section{Acknowledgements}
+%\section{Acknowledgements}
 
-Thanks to James Landay, Michael Bernstein, and the Stanford HCI group for suggestions on this project. Geza Kovacs is supported by the NDSEG fellowship.
+%Thanks to James Landay, Michael Bernstein, and the Stanford HCI group for suggestions on this project. Geza Kovacs is supported by the NDSEG fellowship.
 
 %Although we have focused on vocabulary learning, this approach can potentially be applied to other educational content, or even be used to encourage other small, actionable behaviors such as microexercise. % One could also use a similar mechanism to encourage other behaviors that need to be done for short periods of time on a daily basis, such as small amounts of exercise.
 
@@ -313,6 +347,15 @@ Thanks to James Landay, Michael Bernstein, and the Stanford HCI group for sugges
 
 % Users found the FeedLearn condition more enjoyable and less distracting than the External Service with Email Remdiners condition, because they were able to directly go engage with the quiz content, and were not distracted by unnecessary reminder emails.
 
-\bibliographystyle{acm-sigchi}
+% REFERENCES FORMAT
+% References must be the same font size as other body text.
+\bibliographystyle{SIGCHI-Reference-Format}
 \bibliography{feedlearn}
+
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
