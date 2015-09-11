@@ -55,7 +55,7 @@
 % redefine many LaTeX commands.
 \definecolor{linkColor}{RGB}{6,125,233}
 \hypersetup{%
-  pdftitle={FeedLearn: Using Facebook Feeds for Microlearning},
+  pdftitle={Edvertisements: Adding Microlearning to Social News Feeds and Websites},
   pdfauthor={LaTeX},
   pdfkeywords={SIGCHI, proceedings, archival format},
   bookmarksnumbered,
@@ -74,7 +74,7 @@
 % End of preamble. Here it comes the document.
 \begin{document}
 
-\title{FeedLearn: Using Facebook Feeds for Microlearning}
+\title{Edvertisements: Adding Microlearning to \\ Social News Feeds and Websites}
 
 \numberofauthors{3}
 \author{%
@@ -104,12 +104,18 @@
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{feedlearn-screenshot.png}
-\caption{FeedLearn showing an interactive vocabulary quiz inside a user's Facebook news feed}
+\caption{Our extension can show interactive microlearning tasks (Edvertisements) in users' Facebook news feeds.}
 \label{fig:feedlearn}
 \end{figure}
 
+\begin{figure}
+\includegraphics[width=\columnwidth]{edvertisements-screenshot.png}
+\caption{Our extension can replace advertisements with interactive microlearning tasks (Edvertisements) on arbitrary websites.}
+\label{fig:edvertisements}
+\end{figure}
+
 \begin{abstract}
-Many long-term goals, such as learning a language, require people to spend a small amount of time each day to achieve them. At the same time, people regularly browse social news feeds in their spare time. Our system, FeedLearn, teaches vocabulary in the context of Facebook feeds, by showing users interactive quizzes they can answer without leaving their feeds. It is implemented as a Chrome extension, as Facebook's API does not currently allow developers to insert interactive content into feeds. In our preliminary user study, we compared Japanese vocabulary learning rates when interactive quizzes were inserted directly into feeds, versus inserting links that lead them to quizzes. Our results suggest that users learn more and engage more with microlearning tasks when quizzes can be done without leaving their feeds.
+Many long-term goals, such as learning a language, require people to spend a small amount of time each day to achieve them. At the same time, people regularly browse non-work-related websites and social news feeds in their spare time. We have built a browser extension that teaches vocabulary in the context of Facebook feeds and arbitrary websites, by showing users interactive quizzes they can answer without leaving the website. On Facebook, the quizzes are shown as part of the news feed, while on other sites, the quizzes are shown where advertisements would normally appear. In our preliminary user study, we compared Japanese vocabulary learning rates when interactive quizzes were inserted directly into feeds, versus inserting links that lead them to quizzes. Our results suggest that users learn more and engage more with microlearning tasks when quizzes can be done without leaving their feeds.
 % In our preliminary user study, we find that over the course of a week, we are able to teach students an average of 13 new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is more than the 4 vocabulary words learned if we insert links leading them to visit an external site to study, as is done by current Facebook apps.
 % Unlike apps like Duolingo posting accomplishments in users' feeds, FeedLearn gives friends a simple call to action and allows them to participate in their friends' learning processes.
 %In our first study, we find that over the course of 2 weeks, we are able to teach students N new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is X\% more than a control condition where we ask them to visit a separate website and ask them to study the words on their own time, and Y\% more than a control condition where we show friends' achievements via feed updates. In our second study, we find that giving friends the ability to participate in the social learning process, by suggesting words for their friends to learn, leads to increased engagement. They learn more words in a condition where the words learned are suggested to the group by their friends, which is X\% more than when they select words to choose by themselves, and Y\% more than when the suggestions are automatic.
