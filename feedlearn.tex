@@ -115,7 +115,7 @@
 \end{figure}
 
 \begin{abstract}
-Many long-term goals, such as learning a language, require people to spend a small amount of time each day to achieve them. At the same time, people regularly browse non-work-related websites and social news feeds in their spare time. We have built a browser extension that teaches vocabulary in the context of Facebook feeds and arbitrary websites, by showing users interactive quizzes they can answer without leaving the website. On Facebook, the quizzes are shown as part of the news feed, while on other sites, the quizzes are shown where advertisements would normally appear. In our preliminary user study, we compared Japanese vocabulary learning rates when interactive quizzes were inserted directly into feeds, versus inserting links that lead them to quizzes. Our results suggest that users learn more and engage more with microlearning tasks when quizzes can be done without leaving their feeds.
+Many long-term goals, such as learning a language, require people to spend a small amount of time each day to achieve them. At the same time, people regularly surf the web and read social news feeds in their spare time. We have built a browser extension that teaches vocabulary in the context of Facebook feeds and arbitrary websites, by showing users interactive quizzes they can answer without leaving the website. On Facebook, the quizzes are shown as part of the news feed, while on other sites, the quizzes are shown where advertisements would normally appear. In our preliminary user study, we looked at the effectiveness of inserting microlearning tasks into social news feeds. We compared Japanese vocabulary learning rates when interactive quizzes were inserted directly into feeds, versus inserting links that lead them to quizzes. Our results suggest that users learn more and engage more with microlearning tasks when they can be done directly inside their feeds.
 % In our preliminary user study, we find that over the course of a week, we are able to teach students an average of 13 new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is more than the 4 vocabulary words learned if we insert links leading them to visit an external site to study, as is done by current Facebook apps.
 % Unlike apps like Duolingo posting accomplishments in users' feeds, FeedLearn gives friends a simple call to action and allows them to participate in their friends' learning processes.
 %In our first study, we find that over the course of 2 weeks, we are able to teach students N new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is X\% more than a control condition where we ask them to visit a separate website and ask them to study the words on their own time, and Y\% more than a control condition where we show friends' achievements via feed updates. In our second study, we find that giving friends the ability to participate in the social learning process, by suggesting words for their friends to learn, leads to increased engagement. They learn more words in a condition where the words learned are suggested to the group by their friends, which is X\% more than when they select words to choose by themselves, and Y\% more than when the suggestions are automatic.
@@ -129,10 +129,18 @@ Many long-term goals, such as learning a language, require people to spend a sma
 
 \section{Introduction}
 
-People spend large amounts of time reading their news feeds on social networking sites like Facebook.
-71\% of American adults with an internet connection use Facebook. Of these, 63\% visit Facebook at least once a day, and 40\% visit it multiple times per day \cite{socialmediaupdate}. Among American college students, 90\% use Facebook \cite{collegefacebook2}. College students who use Facebook report spending an average of 30 minutes per day on Facebook \cite{collegefacebook}. Clearly, Facebook news feeds present an opportunity for influencing the behavior of users.
+People spend large amounts of time surfing the web and reading social news feeds on sites like Facebook.
+American adults spend an average of 27 hours per month browsing the web \cite{nielsen2014}.
+71\% of American adults with an internet connection use Facebook. Of these, 63\% visit Facebook at least once a day, and 40\% visit it multiple times per day \cite{socialmediaupdate}. Among American college students, 90\% use Facebook \cite{collegefacebook2}, spending an average of 30 minutes per day on it \cite{collegefacebook}. Social news feeds are widely used - over half of college students who use Facebook report reading their Facebook news feeds 5-7 days per week \cite{collegefacebook}. % Social news feeds and % Clearly, Facebook news feeds present an opportunity for influencing the behavior of users.
 
-In this paper, we present FeedLearn, a technique for allowing users to interactively study flashcard-like content, such as vocabulary, as they browse through their Facebook feeds. Our research questions are:
+In this paper, we present Edvertisements, a technique for showing users interactive microlearning tasks, such as vocabulary flashcards, as they browse the web and read their Facebook feeds. We implemented a Chrome extension which shows microlearning tasks in two ways:
+
+\begin{compactitem}
+\item On Facebook, microlearning tasks are inserted into the feed, alongside regular feed items.
+\item On other sites, microlearning tasks are shown in locations where advertisements would normally appear.
+\end{compactitem}
+
+Our research questions are:
 
 \begin{compactitem}
 \item Are people more likely to engage with microlearning tasks if they can do so without leaving their Facebook feeds?
@@ -151,27 +159,39 @@ Our preliminary user study compared Japanese vocabulary acquisition rates throug
 
 \subsection{Microlearning}
 
-Microlearning is a strategy of using short periods of time throughout the day to study. It has been used for applications such foreign vocabulary learning via mobile apps \cite{microlearning} \cite{micromandarin}. A weakness of needing a separate app for microlearning is that it requires the user to interrupt their routine and open an app to study. %vAlthough they may give users reminders when they should practice, these reminders might come at the wrong time, or be ignored.
+Microlearning is a strategy of using short periods of time throughout the day to study. It has been used for applications such foreign vocabulary learning via mobile apps \cite{microlearning} \cite{micromandarin}. A potential drawback of needing a separate app for microlearning is that it requires the user to develop a habit of interrupting their routine to open an app to study. %vAlthough they may give users reminders when they should practice, these reminders might come at the wrong time, or be ignored.
 
 Some systems have attempted to solve this problem by embedding microlearning into other contexts. There are games where users complete learning tasks while playing \cite{carriearcade}, video players which teach vocabulary while watching foreign-language videos \cite{smartsubtitles}, screensavers that show facts while the screen is idle \cite{screensaver}, and chat clients that show vocabulary while the user is chatting \cite{waitlearning}.
 
-Compared to the learning contexts used by existing work, we believe the Facebook feed is an especially good opportunity for microlearning, because:
+Compared to the learning contexts used by existing work, we believe that recreational web surfing and Facebook feeds are especially good opportunities for microlearning, because:
 
 \begin{compactitem}
 \item Unlike playing educational games or watching foreign-language videos, visiting Facebook is part of the daily routine of nearly half of American adults with an internet connection \cite{socialmediaupdate} %, and the majority of college students \cite{collegefacebook}.
 % \item Unlike a screensaver which is dismissed once the mouse moves, users can interact with quizzes they see in their Facebook feeds.
-\item Unlike needing to respond to a chat message, there are no interruptions to the user's learning while they are browsing their Facebook feeds.
+%\item Unlike needing to respond to a chat message, there are no interruptions to the user's learning while they are browsing their Facebook feeds.
+\item Web surfing and reading Facebook news feeds are recreational activities, so the inserted microlearning tasks will not interrupt their work.
 \item Users are already used to a variety of rich content appearing in their Facebook feeds, such as videos, games, recommendations, and advertisements.
 %\item Users are already used to a variety of rich content appearing in their Facebook feeds, such as videos their friends liked, posts from games and apps, recommendations, and advertisements.
 \end{compactitem}
 
+
+\subsection{Spaced Repetition}
+
+Spaced repetition is a technique designed to help learners retain information by having them review items at regular intervals \cite{karpicke2011spaced}. A class of applications that exploit this are flashcards, which split information into independent chunks that are scheduled for review based on factors such as mastery and recency of review. There have been a number of algorithms and models designed for optimizing learners' retention of the material via spaced repetition \cite{optimalschedule} \cite{memreflex}.
+
 \subsection{News Feeds as a Persuasive Technology}
 
-Many apps attempt to use Facebook feeds as a persuasive technology. For example, apps like Duolingo can broadcast users' study progress on the platform, inviting the user's friends to participate in the activity. %A key advantage that social platforms like Facebook provide is that friends can be associated with requests, increasing their potential persuasiveness via social pressures \cite{foggfacebook}.
+Many apps attempt to use Facebook feeds as a persuasive technology. For example, apps like Duolingo can broadcast users' study progress on the platform, inviting the user's friends to participate in the activity. However, there are many caveats with such applications auto-posting messages on users' feeds. Messages auto-posted by applications receive less attention from the user's friends, compared to messages posted by actual users. Viewers may perceive these posts negatively, ignoring them \cite{socialsharing}.
+
+\subsection{Web Advertising and Ad-Blocking}
+
+Although advertisements are an important revenue source for websites, in consumer surveys 77\% report that they hardly ever click on ads, and 69\% express interest in skipping or blocking ads \cite{adblockinggames}. Ad blockers, which are browser extensions that prevent web ads from being displayed, are used by 5\% of all internet users \cite{adblockinggoesmainstream}. Ad-blocking is especially common among Chrome and Firefox users -- 30\% of Chrome users, and 35\% of Firefox users, have installed an ad-blocker \cite{adblockinggoesmainstream}. %with ad-blocking extensions being the most popular extensions in each browser's extension store.
+
+% Many apps attempt to use Facebook feeds as a persuasive technology. For example, apps like Duolingo can broadcast users' study progress on the platform, inviting the user's friends to participate in the activity. %A key advantage that social platforms like Facebook provide is that friends can be associated with requests, increasing their potential persuasiveness via social pressures \cite{foggfacebook}.
 %Since the emergence of the Facebook app development platform, there have been
 %many attempts to use it as a platform for persuasion. For example, apps like NikePlus can broadcast users' running progress, and apps like Duolingo can broadcast users' study progress on the platform. These messages may also invite the user's friends to participate in the activity. A key advantage that social platforms like Facebook provide is that friends can be associated with requests, increasing their potential persuasiveness via social pressures \cite{foggfacebook}.
 
-However, there are many caveats with such applications auto-posting messages on users' feeds. Messages auto-posted by applications receive little attention from the user's friends, compared to messages that they have posted themselves. Viewers may perceive these posts as either trivial achievements or bragging, ignoring them \cite{socialsharing}. % It is thus suggested that these auto-posted messages be shared only with the subset of the user's friends who are likely to be interested. However, users are unwilling to invest the effort to identify these social circles \cite{socialsharing}.
+% However, there are many caveats with such applications auto-posting messages on users' feeds. Messages auto-posted by applications receive little attention from the user's friends, compared to messages that they have posted themselves. Viewers may perceive these posts as either trivial achievements or bragging, ignoring them \cite{socialsharing}. % It is thus suggested that these auto-posted messages be shared only with the subset of the user's friends who are likely to be interested. However, users are unwilling to invest the effort to identify these social circles \cite{socialsharing}.
 
 %\subsection{Study groups on Facebook}
 
