@@ -143,7 +143,8 @@ In this paper, we present Edvertisements, a technique for showing users interact
 Our research questions are:
 
 \begin{compactitem}
-\item Are people more likely to engage with microlearning tasks if they can do so without leaving their Facebook feeds?
+\item Do users engage with microlearning tasks that we insert into their Facebook feeds?
+\item Are users more likely to engage with microlearning tasks if they can do so without leaving their Facebook feeds?
 \item Do in-feed questions result in higher learning outcomes than the links to external sites used by current Facebook applications?
 % \item Does the regularity and frequency with which users visit Facebook make it suitable for microlearning?
 %\item Are people more likely to learn if they are shown small, easily actionable learning tasks in the social feed. %, instead of messages emphasizing friends' overall achievements?
@@ -161,7 +162,7 @@ Our preliminary user study compared Japanese vocabulary acquisition rates throug
 
 Microlearning is a strategy of using short periods of time throughout the day to study. It has been used for applications such foreign vocabulary learning via mobile apps \cite{microlearning} \cite{micromandarin}. A potential drawback of needing a separate app for microlearning is that it requires the user to develop a habit of interrupting their routine to open an app to study. %vAlthough they may give users reminders when they should practice, these reminders might come at the wrong time, or be ignored.
 
-Some systems have attempted to solve this problem by embedding microlearning into other contexts. There are games where users complete learning tasks while playing \cite{carriearcade}, video players which teach vocabulary while watching foreign-language videos \cite{smartsubtitles}, screensavers that show facts while the screen is idle \cite{screensaver}, and chat clients that show vocabulary while the user is chatting \cite{waitlearning}.
+Some systems have attempted to solve this problem by embedding microlearning into other contexts. There are games where users complete learning tasks while playing \cite{carriearcade}, video players which teach vocabulary while watching foreign-language videos \cite{smartsubtitles}, screensavers that show facts while the screen is idle \cite{screensaver}, and chat clients that show vocabulary while the user is chatting \cite{cai2015wait}.
 
 Compared to the learning contexts used by existing work, we believe that recreational web surfing and Facebook feeds are especially good opportunities for microlearning, because:
 
@@ -169,7 +170,7 @@ Compared to the learning contexts used by existing work, we believe that recreat
 \item Unlike playing educational games or watching foreign-language videos, visiting Facebook is part of the daily routine of nearly half of American adults with an internet connection \cite{socialmediaupdate} %, and the majority of college students \cite{collegefacebook}.
 % \item Unlike a screensaver which is dismissed once the mouse moves, users can interact with quizzes they see in their Facebook feeds.
 %\item Unlike needing to respond to a chat message, there are no interruptions to the user's learning while they are browsing their Facebook feeds.
-\item Web surfing and reading Facebook news feeds are recreational activities, so the inserted microlearning tasks will not interrupt their work.
+\item Web surfing and reading Facebook news feeds are recreational activities, so the inserted microlearning tasks will not interrupt users' work.
 \item Users are already used to a variety of rich content appearing in their Facebook feeds, such as videos, games, recommendations, and advertisements.
 %\item Users are already used to a variety of rich content appearing in their Facebook feeds, such as videos their friends liked, posts from games and apps, recommendations, and advertisements.
 \end{compactitem}
@@ -186,6 +187,8 @@ Many apps attempt to use Facebook feeds as a persuasive technology. For example,
 \subsection{Web Advertising and Ad-Blocking}
 
 Although advertisements are an important revenue source for websites, in consumer surveys 77\% report that they hardly ever click on ads, and 69\% express interest in skipping or blocking ads \cite{adblockinggames}. Ad blockers, which are browser extensions that prevent web ads from being displayed, are used by 5\% of all internet users \cite{adblockinggoesmainstream}. Ad-blocking is especially common among Chrome and Firefox users -- 30\% of Chrome users, and 35\% of Firefox users, have installed an ad-blocker \cite{adblockinggoesmainstream}. %with ad-blocking extensions being the most popular extensions in each browser's extension store.
+
+In surveys, users of ad-blockers cite ``distracting animations and sounds'', and ``offensive/inappropriate ad content'' as their top reasons for blocking ads \cite{adblockinggames}. Although ad-blocking software can be configured to selectively whitelist/blacklist ads for certain websites, most ad-blocker users just retain the default behavior of blocking ads on all websites \cite{adblockinggames}, which may perhaps be due to usability issues in configuring ad-blockers \cite{adblockusability}. By preventing ads from being shown, ad-blockers pose a threat to the advertising industry, as well as websites which rely on advertising revenue \cite{adblockinggames}. % Some websites such as Hulu have responded to this by detecting the presence of ad-blocking software, and requesting that users disable their ad-blockers, though writers of ad-blocker.
 
 % Many apps attempt to use Facebook feeds as a persuasive technology. For example, apps like Duolingo can broadcast users' study progress on the platform, inviting the user's friends to participate in the activity. %A key advantage that social platforms like Facebook provide is that friends can be associated with requests, increasing their potential persuasiveness via social pressures \cite{foggfacebook}.
 %Since the emergence of the Facebook app development platform, there have been
@@ -217,6 +220,40 @@ Although advertisements are an important revenue source for websites, in consume
 % because . These services also generally rely on an external site for 
 
 % ALOE is a system that allows users to learn foreign-language vocabulary while browsing the web, by replacing words in the user's native language with foreign-language vocabulary \cite{augmenting}. This work differs from existing microlearning systems by 
+
+\section{Edvertisements System}
+
+Our system is a Chrome extension that inserts microlearning tasks -- in our case, vocabulary quizzes -- into users' Facebook feeds, and as they are browsing the web. Although we originally implemented the browser extension for Chrome, we have also ported it to Firefox, and our technique can be implemented on any browser that supports extensions (Chrome, Firefox, Edge, Safari, etc). FeedLearn has a variety of microlearning tasks for learning vocabulary in multiple languages, but in this paper we will focus on learning Japanese vocabulary.
+
+% We have thus far focused on interactive microlearning tasks in -- Facebook feeds, and replacing web advertisements. There are many other contexts where we might show users relevant microlearning tasks -- for example, between youtube videos.
+
+% One potentially interesting 
+
+% Just like the problem posed by ad-blockers today, an issue with entirely replacing web advertisements is that websites will be unable to monetize their content. Making this system acceptable and appealing to advertisers is an area of future work. One potential approach would be sponsored microlearning exercises -- for example, a local gym might sponsor an edvertisement which teaches you an workout routine, hoping it'll encourage you to visit their gym more. Alternatively, one might investigate effects of replacing only some of the ads, and having a mix of edvertisements and traditional advertisements. It would be interesting if, for example, the presence of edvertisements starts making people pay more attention to web advertising in general.
+
+% One direction for future work includes making the edvertisements contextually relevant. For example, if it is your Chinese friend's birthday, your Facebook feed might show an edvertisement teaching you how to wish him happy birthday in his native langauge. Or if you are reading a if in your facebook feed it is your Chinese friend's birthday, and 
+
+% Future work includes making the microlearning tasks contextually relevant -- for example, if the user is reading articles about 
+
+% IAB standard container
+
+% Internet Advertising Board
+
+\section{Inserting Edvertisements into Facebook feeds}
+
+Our extension can insert edvertisements into users' Facebook feeds, as rectangular interactive quizzes mimicking the look of a regular feed item, as shown in \autoref{fig:feedlearn}. We chose to insert 1 microlearning task for every 10 normal feed items, to mimic the approximate frequency we observed sponsored content appearing in the feed.
+
+\section{Replacing Web Advertisements with Edvertisements}
+
+People spend considerable time on sites other than Facebook, so we also wished to have a general mechanism for presenting microlearning tasks as users browse the web. We do so by detecting web advertisements on pages, and replacing them with microlearning tasks.
+
+We detect the presence of web advertisements the same way ad blockers do -- by checking the URL the element is loaded from, and comparing it against EasyList, which is a public list of known URL patterns for advertisements maintained by Adblock Plus. If the element is detected as an advertisement, we then replace it with a quiz of the same size.
+
+There are standardized sizes for web advertisements, called the IAB (Interactive Advertising Bureau) Standard Ad Units, which over 80\% of online advertisements follow. We have implemented microlearning tasks to fit 3 of the most common sizes.  If a microlearning task in the appropriate size is not available, we pick the nearest match and scale it to fit the available space. %Our system chooses the
+
+% citation for the 80% figure: A guide to IAB's new standard ad units http://www.imediaconnection.com/content/31499.asp 
+
+%\section{}
 
 \section{FeedLearn Interface}
 
@@ -264,6 +301,8 @@ Spaced repetition algorithms schedule items for review to ensure long-term reten
 \section{Preliminary User Study}
 
 We conducted a preliminary user study to compare the effectiveness of inserting interactive quizzes directly into users' Facebook feeds, versus inserting links to the quizzes as is commonly done on Facebook today. % We compared the 
+
+In study, we only inserted microlearning tasks into Facebook feeds and did not replace ads with quizzes, as Facebook feeds were an environment we could better control the frequency with which quizzes appeared, their size and appearance, and many interested users were already using ad-blockers, which would have conflicted with the ad-replacement functionality.
 
 \subsection{Participants}
 
