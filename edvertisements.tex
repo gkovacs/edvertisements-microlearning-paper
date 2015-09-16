@@ -109,7 +109,7 @@
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{edvertisements-screenshot.png}
+\includegraphics[width=\columnwidth]{edvertisements-screenshot3.png}
 \caption{Our extension can replace advertisements with interactive microlearning tasks (Edvertisements) on arbitrary websites.}
 \label{fig:edvertisements}
 \end{figure}
@@ -244,7 +244,7 @@ We detect the presence of web advertisements the same way ad blockers do -- by c
 
 % There are standardized sizes for web advertisements, called the IAB (Interactive Advertising Bureau) Standard Ad Units, which over 80\% of online advertisements follow.
 Web advertisements follow standardized sizes, called the IAB (Interactive Advertising Bureau) Standard Ad Units.
-We have implemented microlearning tasks to fit 3 of the most common sizes -- 300x250, 728x90, and 200x90 -- which correspond to regular-sized, banner, and small ads.  If a microlearning task in the appropriate size is not available, we pick the nearest match and scale it to fit the available space. %Our system chooses the
+We have implemented microlearning tasks to fit 3 of the most common sizes -- 300x250, 728x90, and 200x90 -- which correspond to regular-sized, banner, and small ads.  If a microlearning task in the appropriate size is not available, we pick a smaller one and scale and stack it to fit the available space, as shown in \autoref{fig:edvertisements}. %Our system chooses the
 
 % citation for the 80% figure: A guide to IAB's new standard ad units http://www.imediaconnection.com/content/31499.asp 
 
