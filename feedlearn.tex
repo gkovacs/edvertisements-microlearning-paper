@@ -115,7 +115,8 @@
 \end{figure}
 
 \begin{abstract}
-Many long-term goals, such as learning a language, require people to spend a small amount of time each day to achieve them. At the same time, people regularly surf the web and read social news feeds in their spare time. We have built a browser extension that teaches vocabulary in the context of Facebook feeds and arbitrary websites, by showing users interactive quizzes they can answer without leaving the website. On Facebook, the quizzes are shown as part of the news feed, while on other sites, the quizzes are shown where advertisements would normally appear. In our preliminary user study, we looked at the effectiveness of inserting microlearning tasks into social news feeds. We compared Japanese vocabulary learning rates when interactive quizzes were inserted directly into feeds, versus inserting links that lead them to quizzes. Our results suggest that users learn more and engage more with microlearning tasks when they can be done directly inside their feeds.
+Many long-term goals, such as learning a language, require people to spend a small amount of time each day to achieve them. At the same time, people regularly surf the web and read social news feeds in their spare time. We have built a browser extension that teaches vocabulary in the context of Facebook feeds and arbitrary websites, by showing users interactive quizzes they can answer without leaving the website. On Facebook, the quizzes are shown as part of the news feed, while on other sites, the quizzes are shown where advertisements would normally appear. In our user study, we looked at the effectiveness of inserting microlearning tasks into social news feeds. We compared vocabulary learning rates when interactive quizzes were inserted directly into feeds, versus inserting links that lead them to quizzes. Our results suggest that users engage with and learn from our inserted quizzes, and engagement is higher when they can be done directly inside their feeds.
+%Many long-term goals, such as learning a language, require people to spend a small amount of time each day to achieve them. At the same time, people regularly surf the web and read social news feeds in their spare time. We have built a browser extension that teaches vocabulary in the context of Facebook feeds and arbitrary websites, by showing users interactive quizzes they can answer without leaving the website. On Facebook, the quizzes are shown as part of the news feed, while on other sites, the quizzes are shown where advertisements would normally appear. In our preliminary user study, we looked at the effectiveness of inserting microlearning tasks into social news feeds. We compared Japanese vocabulary learning rates when interactive quizzes were inserted directly into feeds, versus inserting links that lead them to quizzes. Our results suggest that users engage with and learn vocabulary from our inserted quizzes, and they engage more with microlearning tasks when they can be done directly inside their feeds.
 % In our preliminary user study, we find that over the course of a week, we are able to teach students an average of 13 new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is more than the 4 vocabulary words learned if we insert links leading them to visit an external site to study, as is done by current Facebook apps.
 % Unlike apps like Duolingo posting accomplishments in users' feeds, FeedLearn gives friends a simple call to action and allows them to participate in their friends' learning processes.
 %In our first study, we find that over the course of 2 weeks, we are able to teach students N new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is X\% more than a control condition where we ask them to visit a separate website and ask them to study the words on their own time, and Y\% more than a control condition where we show friends' achievements via feed updates. In our second study, we find that giving friends the ability to participate in the social learning process, by suggesting words for their friends to learn, leads to increased engagement. They learn more words in a condition where the words learned are suggested to the group by their friends, which is X\% more than when they select words to choose by themselves, and Y\% more than when the suggestions are automatic.
@@ -133,19 +134,19 @@ People spend large amounts of time surfing the web and reading social news feeds
 American adults spend an average of 27 hours per month browsing the web \cite{nielsen2014}.
 71\% of American adults with an internet connection use Facebook. Of these, 63\% visit Facebook at least once a day, and 40\% visit it multiple times per day \cite{socialmediaupdate}. Among American college students, 90\% use Facebook \cite{collegefacebook2}, spending an average of 30 minutes per day on it \cite{collegefacebook}. Social news feeds are widely used - over half of college students who use Facebook report reading their Facebook news feeds 5-7 days per week \cite{collegefacebook}. % Social news feeds and % Clearly, Facebook news feeds present an opportunity for influencing the behavior of users.
 
-In this paper, we present Edvertisements, a technique for showing users interactive microlearning tasks, such as vocabulary flashcards, as they browse the web and read their Facebook feeds. We implemented a Chrome extension which shows microlearning tasks in two ways:
+In this paper, we present Edvertisements, interactive microlearning tasks which we show to users as they browse the web and read their Facebook feeds. We implemented a Chrome extension which shows Edvertisements in two ways:
 
 \begin{compactitem}
-\item On Facebook, microlearning tasks are inserted into the feed, alongside regular feed items.
-\item On other sites, microlearning tasks are shown in locations where advertisements would normally appear.
+\item On Facebook, Edvertisements are inserted into the feed, alongside regular feed items.
+\item On other sites, Edvertisements are shown in locations where advertisements would normally appear.
 \end{compactitem}
 
 Our research questions are:
 
 \begin{compactitem}
-\item Do users engage with microlearning tasks that we insert into their Facebook feeds?
-\item Are users more likely to engage with microlearning tasks if they can do so without leaving their Facebook feeds?
-\item Do in-feed questions result in higher learning outcomes than the links to external sites used by current Facebook applications?
+\item Do users engage and learn from Edvertisements that we insert into their Facebook feeds?
+\item Do users engage and learn more with Edvertisements if they can do the microlearning tasks without leaving their Facebook feeds (compared to external links)?
+% \item Does having Edvertisements where users can do the microlearning tasks without leaving their Facebook feeds result in higher learning outcomes?
 % \item Does the regularity and frequency with which users visit Facebook make it suitable for microlearning?
 %\item Are people more likely to learn if they are shown small, easily actionable learning tasks in the social feed. %, instead of messages emphasizing friends' overall achievements?
 %\item  Are people more likely to do flashcards that their friends suggested for them to do, as opposed to flashcards they selected themselves, or flashcards suggested by the system?
@@ -154,7 +155,9 @@ Our research questions are:
 %\item Does the selection process result in something useful?
 \end{compactitem}
 
-Our preliminary user study compared Japanese vocabulary acquisition rates through FeedLearn's in-feed interactive quizzes, versus inserting links to an external website where they can do quizzes, as is currently done by Facebook applications. We found that users answered more quizzes when they could do so without leaving the feed, and they learned more new words on average over a week. % when they could do the quizzes inside the feeds.
+In our user study, we looked at engagement and vocabulary acquisition when Edvertisments were inserted into users' Facebook feeds. We also compared the effects on engagement and vocabulary acquisition of being able to do the do the microlearning tasks in place, as opposed to having to click a link to go to an external website. We found that there was high engagement with Edvertisements, users had improved post-test results after a week, and that engagement was higher when the Edvertisements could be done without leaving the feed. % users answered more quizzes when they could do so without leaving the feed, and they learned more new words on average over a week. 
+
+% Our preliminary user study looked at engagement and Japanese vocabulary acquisition rates through FeedLearn's in-feed interactive quizzes, versus inserting links to an external website where they can do quizzes, as is currently done by Facebook applications. We found that users answered more quizzes when they could do so without leaving the feed, and they learned more new words on average over a week. % when they could do the quizzes inside the feeds.
 
 \section{Related Work}
 
@@ -176,9 +179,9 @@ Compared to the learning contexts used by existing work, we believe that recreat
 \end{compactitem}
 
 
-\subsection{Spaced Repetition}
+%\subsection{Spaced Repetition}
 
-Spaced repetition is a technique designed to help learners retain information by having them review items at regular intervals \cite{karpicke2011spaced}. A class of applications that exploit this are flashcards, which split information into independent chunks that are scheduled for review based on factors such as mastery and recency of review. There have been a number of algorithms and models designed for optimizing learners' retention of the material via spaced repetition \cite{optimalschedule} \cite{memreflex}.
+%Spaced repetition is a technique designed to help learners retain information by having them review items at regular intervals \cite{karpicke2011spaced}. A class of applications that exploit this are flashcards, which split information into independent chunks that are scheduled for review based on factors such as mastery and recency of review. There have been a number of algorithms and models designed for optimizing learners' retention of the material via spaced repetition \cite{optimalschedule} \cite{memreflex}.
 
 \subsection{News Feeds as a Persuasive Technology}
 
@@ -223,41 +226,33 @@ In surveys, users of ad-blockers cite ``distracting animations and sounds'', and
 
 \section{Edvertisements System}
 
-Our system is a Chrome extension that inserts microlearning tasks -- in our case, vocabulary quizzes -- into users' Facebook feeds, and as they are browsing the web. Although we originally implemented the browser extension for Chrome, we have also ported it to Firefox, and our technique can be implemented on any browser that supports extensions (Chrome, Firefox, Edge, Safari, etc). FeedLearn has a variety of microlearning tasks for learning vocabulary in multiple languages, but in this paper we will focus on learning Japanese vocabulary.
-
-% We have thus far focused on interactive microlearning tasks in -- Facebook feeds, and replacing web advertisements. There are many other contexts where we might show users relevant microlearning tasks -- for example, between youtube videos.
-
-% One potentially interesting 
-
-% Just like the problem posed by ad-blockers today, an issue with entirely replacing web advertisements is that websites will be unable to monetize their content. Making this system acceptable and appealing to advertisers is an area of future work. One potential approach would be sponsored microlearning exercises -- for example, a local gym might sponsor an edvertisement which teaches you an workout routine, hoping it'll encourage you to visit their gym more. Alternatively, one might investigate effects of replacing only some of the ads, and having a mix of edvertisements and traditional advertisements. It would be interesting if, for example, the presence of edvertisements starts making people pay more attention to web advertising in general.
-
-% One direction for future work includes making the edvertisements contextually relevant. For example, if it is your Chinese friend's birthday, your Facebook feed might show an edvertisement teaching you how to wish him happy birthday in his native langauge. Or if you are reading a if in your facebook feed it is your Chinese friend's birthday, and 
-
-% Future work includes making the microlearning tasks contextually relevant -- for example, if the user is reading articles about 
+Our system is a Chrome extension that inserts microlearning tasks -- in our case, vocabulary quizzes -- into users' Facebook feeds, and as they are browsing the web. Although we originally implemented the browser extension for Chrome, we have also ported it to Firefox, and our technique can be implemented on any browser that supports extensions (Chrome, Firefox, Edge, Safari, etc). Our system has a variety of microlearning tasks for learning vocabulary in multiple languages, but in this paper we will focus on learning Japanese vocabulary.
 
 % IAB standard container
 
 % Internet Advertising Board
 
-\section{Inserting Edvertisements into Facebook feeds}
+\subsection{Inserting Edvertisements into Facebook Feeds}
 
-Our extension can insert edvertisements into users' Facebook feeds, as rectangular interactive quizzes mimicking the look of a regular feed item, as shown in \autoref{fig:feedlearn}. We chose to insert 1 microlearning task for every 10 normal feed items, to mimic the approximate frequency we observed sponsored content appearing in the feed.
+Our extension can insert Edvertisements into users' Facebook feeds, as rectangular interactive quizzes mimicking the look of a regular feed item, as shown in \autoref{fig:feedlearn}. We chose to insert 1 microlearning task for every 10 normal feed items, to mimic the approximate frequency we observed sponsored content appearing in the feed.
 
-\section{Replacing Web Advertisements with Edvertisements}
+\subsection{Replacing Web Advertisements with Edvertisements}
 
 People spend considerable time on sites other than Facebook, so we also wished to have a general mechanism for presenting microlearning tasks as users browse the web. We do so by detecting web advertisements on pages, and replacing them with microlearning tasks.
 
 We detect the presence of web advertisements the same way ad blockers do -- by checking the URL the element is loaded from, and comparing it against EasyList, which is a public list of known URL patterns for advertisements maintained by Adblock Plus. If the element is detected as an advertisement, we then replace it with a quiz of the same size.
 
-There are standardized sizes for web advertisements, called the IAB (Interactive Advertising Bureau) Standard Ad Units, which over 80\% of online advertisements follow. We have implemented microlearning tasks to fit 3 of the most common sizes.  If a microlearning task in the appropriate size is not available, we pick the nearest match and scale it to fit the available space. %Our system chooses the
+% There are standardized sizes for web advertisements, called the IAB (Interactive Advertising Bureau) Standard Ad Units, which over 80\% of online advertisements follow.
+Web advertisements follow standardized sizes, called the IAB (Interactive Advertising Bureau) Standard Ad Units.
+We have implemented microlearning tasks to fit 3 of the most common sizes -- 300x250, 728x90, and 200x90 -- which correspond to regular-sized, banner, and small ads.  If a microlearning task in the appropriate size is not available, we pick the nearest match and scale it to fit the available space. %Our system chooses the
 
 % citation for the 80% figure: A guide to IAB's new standard ad units http://www.imediaconnection.com/content/31499.asp 
 
 %\section{}
 
-\section{FeedLearn Interface}
+%\section{FeedLearn Interface}
 
-FeedLearn inserts interactive vocabulary quizzes into users' Facebook feeds, as shown in \autoref{fig:feedlearn}. It is implemented as a Chrome extension, as Facebook's API does not currently allow developers to insert interactive content into feeds. FeedLearn supports multiple languages, but this paper will focus on learning basic Japanese nouns. % FeedLearn supports multiple languages, but this paper will focus on the version that teaches basic Japanese nouns.
+%FeedLearn inserts interactive vocabulary quizzes into users' Facebook feeds, as shown in \autoref{fig:feedlearn}. It is implemented as a Chrome extension, as Facebook's API does not currently allow developers to insert interactive content into feeds. FeedLearn supports multiple languages, but this paper will focus on learning basic Japanese nouns. % FeedLearn supports multiple languages, but this paper will focus on the version that teaches basic Japanese nouns.
 
 \subsection{Quiz Types}
 
@@ -278,7 +273,7 @@ One type of quiz presents a noun in English, and asks the user to select the cor
 \label{fig:quiz2}
 \end{figure}
 
-We opted to use this multiple-choice quiz format, because it tests the user's knowledge with a minimal amount of interaction -- the user simply clicks on a word to answer. Once the user answers a quiz correctly, a new quiz testing a different word is shown. Thus, users can continue to study vocabulary in their feed for as long as they wish to.
+We opted to use this multiple-choice quiz format, because it tests the user's knowledge with a minimal amount of interaction -- the user simply clicks on a word to answer. Once the user answers a quiz correctly, a new quiz testing a different word is shown. Thus, users can use an edvertisement to continue study vocabulary for as long as they wish to.
 
 % A picture is also presented alongside the foreign-language word, to help learners visually remember them. Prior research has shown that flashcards showing a picture along with the text allow learners to learn vocabulary better than text-only flashcards \cite{multimediavocabulary}. We focus on nouns, because they are the most common type of word -- the majority of words in the Oxford English dictionary are nouns \cite{microlearning} -- and they are relatively easy to visualize. This is the same quiz style used by Duolingo to introduce nouns.
 
@@ -290,7 +285,9 @@ Our words and definitions were taken from the Nouns section of Wiktionary's 1000
 
 \subsection{Spaced Repetition}
 
-Spaced repetition algorithms schedule items for review to ensure long-term retention \cite{spacedrepetition}. We modified the Memreflex algorithm \cite{memreflex} to show the word due for review that has been seen least recently in the feed, as opposed to always showing the most overdue word as Memreflex does. This ensures that users will continue to see different words as they are scrolling through their feeds, even if they are not always answering the in-feed questions.
+Spaced repetition algorithms schedule items for review to ensure long-term retention \cite{karpicke2011spaced}. We modified the Memreflex algorithm \cite{memreflex} to show the word due for review that has been seen least recently in the feed, as opposed to always showing the most overdue word as Memreflex does. This ensures that users will continue to see different words as they are scrolling through their feeds, even if they are not always answering the in-feed questions.
+
+% Spaced repetition algorithms schedule items for review to ensure long-term retention \cite{spacedrepetition}. We modified the Memreflex algorithm \cite{memreflex} to show the word due for review that has been seen least recently in the feed, as opposed to always showing the most overdue word as Memreflex does. This ensures that users will continue to see different words as they are scrolling through their feeds, even if they are not always answering the in-feed questions.
 
 % Quizzes are generated automatically from the provided English word. The other options are generated by looking up the word in WordNet \cite{wordnet}, to find related words that have similar category and semantics but have different meaning (for example, other animal names). The images are obtained by taking the first result on Google Images. We select the list of words to teach based on their overall usefulness in the language (as judged by word frequency in natural-language text).
 
@@ -298,11 +295,13 @@ Spaced repetition algorithms schedule items for review to ensure long-term reten
 
 %We insert quizzes into feeds so that they will be encountered at a rate of 1 quiz every 10 posts. We picked this rate, as this was similar to the frequency we observed advertisements and sponsored content appearing in Facebook news feeds. Hence, our should not distract users any more than existing advertisements. %on Facebook. % This is optimal because (need justification).
 
-\section{Preliminary User Study}
+\section{User Study}
 
-We conducted a preliminary user study to compare the effectiveness of inserting interactive quizzes directly into users' Facebook feeds, versus inserting links to the quizzes as is commonly done on Facebook today. % We compared the 
+We conducted a preliminary user study to see how much users would engage with Edvertisements, and compare the effectiveness of inserting interactive quizzes that can be done without leaving the page, versus inserting static links as is done by today's web advertisements and sponsored Facebook posts. %compare the effectiveness of inserting interactive quizzes directly into users' Facebook feeds, versus inserting links to the quizzes as is commonly done on Facebook today. % We compared the 
 
-In study, we only inserted microlearning tasks into Facebook feeds and did not replace ads with quizzes, as Facebook feeds were an environment we could better control the frequency with which quizzes appeared, their size and appearance, and many interested users were already using ad-blockers, which would have conflicted with the ad-replacement functionality.
+% have a figure illustrating that usage did not decrease over itme
+
+In our study, we only inserted microlearning tasks into Facebook feeds and did not replace ads with quizzes, as Facebook feeds were an environment we could better control the frequency with which quizzes appeared, their size and appearance, and many interested users were already using ad-blockers, which would have conflicted with the ad-replacement functionality.
 
 \subsection{Participants}
 
@@ -321,7 +320,7 @@ We recruited 12 users who had not previously studied Japanese but were intereste
 
 \subsection{Materials}
 
-We used 50 basic Japanese words from Wiktionary's Basic Japanese Words list as the study material. We presented vocabulary words in romanized form instead of Japanese scripts, as our users could not read Japanese scripts.
+We used 50 basic Japanese words from Wiktionary's Basic Japanese Words list as the study material. We presented vocabulary words in romanized form instead of Japanese script, as our users could not read Japanese script.
 
 %We selected the 30 most frequently used non-abstract nouns in Japanese, and generated flashcards automatically for them, according to the procedure described in the Quiz Generation section. We presented vocabulary words in romanized form rather than the standard Japanese orthography, to avoid difficulties resulting from unfamiliarity with the Japanese writing system.
 
@@ -334,7 +333,7 @@ Users were assigned to one of two conditions:
 \item Users in the \textit{link} condition had links inserted into their feed which led them to a site where they could do the quizzes, as shown in \autoref{fig:control}.
 \end{compactitem}
 
-Apart form the different items (quizzes/links) inserted into the feed, the questions and quiz interfaces were identical in the two conditions. In both conditions, the items were inserted at a rate of 1 quiz/link per 10 feed items. We chose this rate because it was approximately the rate at which we observed sponsored content and advertisements to appear in our feeds.
+Apart form the different items (quizzes/links) inserted into the feed, the questions and quiz interfaces were identical in the two conditions. In both conditions, the items were inserted at a rate of 1 quiz/link per 10 feed items. % We chose this rate because it was approximately the rate at which we observed sponsored content and advertisements to appear in our feeds.
 
 % There were 3 conditions in our study. We assigned 10 students to each:
 
@@ -344,7 +343,7 @@ The study was conducted entirely online. First, users took a pre-test on the wor
 
 \section{Results}
 
-\subsection{Vocab Quiz Results}
+\subsection{Vocabulary Quiz Results}
 
 \begin{figure}
 \centering
@@ -355,7 +354,7 @@ The study was conducted entirely online. First, users took a pre-test on the wor
 
 Average vocabulary pre-test and post-test scores are shown in \autoref{fig:vocab-test-scores}. On average, users in the in-feed condition learned 13.2 new words, compared to 2.5 new words learned in the link condition. However, this was not statistically significant (t=1.51, p=0.16).
 
-\subsection{Logged Interactions}
+\subsection{Engagement With Edvertisements}
 
 The number of times users practiced answering quizzes is shown in \autoref{fig:event-logs}. We also kept track of ``study sessions'', which we defined as the number of times the user clicked on the link to visit the external website (in the link condition), or first answered a quiz that was inserted into their feed (in the in-quiz condition). % We also show number of answers and sessions normalized by the number of feed insertions to normalize for amounts of Facebook use.
 
@@ -366,21 +365,41 @@ The number of times users practiced answering quizzes is shown in \autoref{fig:e
 \label{fig:event-logs}
 \end{figure}
 
-On average, we found that users in the in-feed quiz condition answered significantly more quizzes than the link condition, did more study sessions, and studied on more days across the week. We believe this difference is due to the decreased barrier to starting a study session in the in-feed condition, as they do not need to leave the feed.
+We found that there was high engagement with in-feed Edvertisements -- on average, users answered 116 quizzes across 21 study sessions and answered a question 4.4 days of the 5.7 days they visited Facebook. Users in the in-feed quiz condition answered significantly more quizzes than the link condition, did more study sessions, and studied on more days across the week. % We believe this difference is due to the decreased barrier to starting a study session in the in-feed condition, as they do not need to leave the feed.
 
-%\subsection{Qualitative Feedback}
+\subsection{Qualitative Feedback}
 
-Some users mentioned that they would prefer words to be explicitly introduced first before they start appearing in quizzes.  In addition, as shown by our ``ratio of study sessions to insertions'', even in the in-feed condition, users only interact with 1/4 of quizzes that they see. Hence, we need to ensure that seeing items reinforces memory, even if users do not interact with them. Later versions of FeedLearn address this issue with a new type of item that introduces new words and reinforces memory for old ones.
+Some users mentioned that they would prefer words to be explicitly introduced first before they start appearing in quizzes.  In addition, as shown by our ``ratio of study sessions to insertions'', even in the in-feed condition, users only interact with 1/4 of quizzes that they see. Hence, we need to ensure that seeing items reinforces memory, even if users do not interact with them. To address this issue, we later added new types of item to introduces new words and review old ones.
 
-\section{Conclusion}
+\section{Conclusion and Future Work}
 
-FeedLearn uses Facebook feeds for vocabulary microlearning.
-By eliminating the need to leave the Facebook feed to do quizzes, FeedLearn reduces the barrier
-required to start microlearning tasks. Our user study found that eliminating the need to click a link to start studying vocabulary results in increased engagement.
+Edvertisements are interactive microlearning tasks that we can show to users as they are surfing the web. We have built an browser extension that shows Edvertisements by inserting them into Facebook feeds, and by replacing web advertisements with them.
 
-Although we have focused on vocabulary, other content could also be microlearned in the context of social feeds.  In-feed messages encouraging small, actionable tasks could also be used to promote habits such as microexercise.
+In our user study, we inserted Edvertisements teaching vocabulary into users' Facebook feeds. We found that there was users engaged with and learned from Edvertisements, and that engagement rates were higher when the quizzes could be done without leaving their feeds.
 
-Future work includes using a model to determine the optimal times to insert microlearning tasks into feeds. Another potential extension is making the microlearning tasks more integrated with the Facebook environment to create a more social in-feed learning experience. %Future work includes better integrating the microlearning tasks with the the social nature of the Facebook environment to create a richer in-feed learning experience.
+Our current implementation inserts Edvertisements into Facebook feeds, and replaces web advertisements with them. There are other online recreational contexts where we might show users Edvertisements -- for example, between youtube videos, chapters of a e-book, or in their email.
+
+Although we have focused on microlearning vocabulary, Edvertisements might also be a vehicle for reminding people to do other small, beneficial tasks as they are idly surfing the web -- for example, encouraging people to brush their teeth, do a small exercise, or complete an item on their to-do list.
+
+Another direction for future work includes making the Edvertisements contextually relevant to the page it is being inserted into. For example, if it is your Chinese friend's birthday, your Facebook feed might show an Edvertisement teaching you how to wish him happy birthday in Chinese. Or if you are reading an anti-vaccination webpage, an Edvertisement might teach you scientific facts about vaccines.
+
+Just like the problem posed by ad-blockers today, an issue with entirely replacing web advertisements with Edvertisements is that websites will be unable to monetize their content. Making this system acceptable and appealing to advertisers is another area of future work. One potential approach would be sponsored Edvertisements -- for example, a local gym might sponsor an Edvertisement which teaches you an workout routine, hoping it'll encourage you to visit their gym more. Alternatively, one might investigate effects of replacing only some of the ads, and having a mix of Edvertisements and traditional advertisements. It would be interesting if, for example, the presence of Edvertisements starts making people pay more attention to web advertising in general.
+
+% FeedLearn uses Facebook feeds for vocabulary microlearning.
+% By eliminating the need to leave the Facebook feed to do quizzes, FeedLearn reduces the barrier
+% required to start microlearning tasks. Our user study found that eliminating the need to click a link to start studying vocabulary results in increased engagement.
+
+% We have thus far focused on interactive microlearning tasks in -- Facebook feeds, and replacing web advertisements. There are many other contexts where we might show users relevant microlearning tasks -- for example, between youtube videos.
+
+% One potentially interesting 
+
+% Future work includes making the microlearning tasks contextually relevant -- for example, if the user is reading articles about 
+
+
+
+% Although we have focused on microlearning vocabulary, other content could also be conveyed in the context of social feeds and advertisements.  In-feed messages encouraging small, actionable tasks could also be used to promote habits such as microexercise.
+
+% Future work includes using a model to determine the optimal times to insert microlearning tasks into feeds. Another potential extension is making the microlearning tasks more integrated with the Facebook environment to create a more social in-feed learning experience. %Future work includes better integrating the microlearning tasks with the the social nature of the Facebook environment to create a richer in-feed learning experience.
 
 %\section{Acknowledgements}
 
