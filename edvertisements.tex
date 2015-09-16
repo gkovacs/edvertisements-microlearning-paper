@@ -109,7 +109,7 @@
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{edvertisements-screenshot3.png}
+\includegraphics[width=\columnwidth]{edvertisements-screenshot4.png}
 \caption{Our extension can replace advertisements with interactive microlearning tasks (Edvertisements) on arbitrary websites.}
 \label{fig:edvertisements}
 \end{figure}
@@ -187,6 +187,8 @@ Compared to the learning contexts used by existing work, we believe that recreat
 
 Many apps attempt to use Facebook feeds as a persuasive technology. For example, apps like Duolingo can broadcast users' study progress on the platform, inviting the user's friends to participate in the activity. However, there are many caveats with such applications auto-posting messages on users' feeds. Messages auto-posted by applications receive less attention from the user's friends, compared to messages posted by actual users. Viewers may perceive these posts negatively, ignoring them \cite{socialsharing}.
 
+\pagebreak
+
 \subsection{Web Advertising and Ad-Blocking}
 
 Although advertisements are an important revenue source for websites, in consumer surveys 77\% report that they hardly ever click on ads, and 69\% express interest in skipping or blocking ads \cite{adblockinggames}. Ad blockers, which are browser extensions that prevent web ads from being displayed, are used by 5\% of all internet users \cite{adblockinggoesmainstream}. Ad-blocking is especially common among Chrome and Firefox users -- 30\% of Chrome users, and 35\% of Firefox users, have installed an ad-blocker \cite{adblockinggoesmainstream}. %with ad-blocking extensions being the most popular extensions in each browser's extension store.
@@ -244,7 +246,7 @@ We detect the presence of web advertisements the same way ad blockers do -- by c
 
 % There are standardized sizes for web advertisements, called the IAB (Interactive Advertising Bureau) Standard Ad Units, which over 80\% of online advertisements follow.
 Web advertisements follow standardized sizes, called the IAB (Interactive Advertising Bureau) Standard Ad Units.
-We have implemented microlearning tasks to fit 3 of the most common sizes -- 300x250, 728x90, and 200x90 -- which correspond to regular-sized, banner, and small ads.  If a microlearning task in the appropriate size is not available, we pick a smaller one and scale and stack it to fit the available space, as shown in \autoref{fig:edvertisements}. %Our system chooses the
+We have implemented microlearning tasks to fit 2 of the common sizes -- 300x250 and 200x90 -- which correspond to regular-sized and small ads.  If a microlearning task in the appropriate size is not available, we pick a smaller one and scale and stack it to fit the available space. For example we can fill a banner ad (728x90) with 3 small Edvertisements, as shown in \autoref{fig:edvertisements}. %Our system chooses the
 
 % citation for the 80% figure: A guide to IAB's new standard ad units http://www.imediaconnection.com/content/31499.asp 
 
