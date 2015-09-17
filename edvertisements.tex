@@ -158,7 +158,9 @@ Our research questions are:
 %\item Does the selection process result in something useful?
 \end{compactitem}
 
-In our user study, we looked at engagement and vocabulary acquisition when Edvertisments were inserted into users' Facebook feeds. We also compared the effects on engagement and vocabulary acquisition of being able to do the microlearning tasks in place, as opposed to having to click a link to go to an external website. We found that there was high engagement with Edvertisements, users had improved post-test results after a week, and that engagement was higher when the Edvertisements could be done without leaving the feed. % users answered more quizzes when they could do so without leaving the feed, and they learned more new words on average over a week. 
+In our user study, we looked at engagement and vocabulary acquisition when Edvertisments were inserted into users' Facebook feeds. We also compared the effects of being able to do the microlearning tasks in place, as opposed to having to click a link to go to an external website. We found that there was high engagement with Edvertisements, users had improved post-test results after a week, and that engagement was higher when the Edvertisements could be done without leaving the feed. % users answered more quizzes when they could do so without leaving the feed, and they learned more new words on average over a week. 
+
+% In our user study, we looked at engagement and vocabulary acquisition when Edvertisments were inserted into users' Facebook feeds. We also compared the effects on engagement and vocabulary acquisition of being able to do the microlearning tasks in place, as opposed to having to click a link to go to an external website. We found that there was high engagement with Edvertisements, users had improved post-test results after a week, and that engagement was higher when the Edvertisements could be done without leaving the feed. % users answered more quizzes when they could do so without leaving the feed, and they learned more new words on average over a week. 
 
 % Our preliminary user study looked at engagement and Japanese vocabulary acquisition rates through FeedLearn's in-feed interactive quizzes, versus inserting links to an external website where they can do quizzes, as is currently done by Facebook applications. We found that users answered more quizzes when they could do so without leaving the feed, and they learned more new words on average over a week. % when they could do the quizzes inside the feeds.
 
@@ -186,9 +188,9 @@ Compared to the learning contexts used by existing work, we believe that recreat
 
 %Spaced repetition is a technique designed to help learners retain information by having them review items at regular intervals \cite{karpicke2011spaced}. A class of applications that exploit this are flashcards, which split information into independent chunks that are scheduled for review based on factors such as mastery and recency of review. There have been a number of algorithms and models designed for optimizing learners' retention of the material via spaced repetition \cite{optimalschedule} \cite{memreflex}.
 
-\subsection{News Feeds as a Persuasive Technology}
+\subsection{Using Social News Feeds as a Persuasive Technology}
 
-Many apps attempt to use Facebook feeds as a persuasive technology. For example, apps like Duolingo can broadcast users' study progress on the platform, inviting the user's friends to participate in the activity. However, there are many caveats with such applications auto-posting messages on users' feeds. Messages auto-posted by applications receive less attention from the user's friends, compared to messages posted by actual users. Viewers may perceive these posts negatively, ignoring them \cite{socialsharing}.
+Many apps attempt to use Facebook feeds as a persuasive technology, to help users form study habits. For example, apps like Duolingo can broadcast users' study progress on the platform, inviting the user's friends to participate in the activity. However, there are many caveats with such applications auto-posting messages on users' feeds. Messages auto-posted by applications receive less attention from the user's friends, compared to messages posted by actual users. Viewers may perceive these posts negatively, ignoring them \cite{socialsharing}.
 
 \pagebreak
 
@@ -196,7 +198,7 @@ Many apps attempt to use Facebook feeds as a persuasive technology. For example,
 
 Although advertisements are an important revenue source for websites, in consumer surveys 77\% report that they hardly ever click on ads, and 69\% express interest in skipping or blocking ads \cite{adblockinggames}. Ad blockers, which are browser extensions that prevent web ads from being displayed, are used by 5\% of all internet users \cite{adblockinggoesmainstream}. Ad-blocking is especially common among Chrome and Firefox users -- 30\% of Chrome users, and 35\% of Firefox users, have installed an ad-blocker \cite{adblockinggoesmainstream}. %with ad-blocking extensions being the most popular extensions in each browser's extension store.
 
-In surveys, users of ad-blockers cite ``distracting animations and sounds'', and ``offensive/inappropriate ad content'' as their top reasons for blocking ads \cite{adblockinggames}. Although ad-blocking software can be configured to selectively whitelist/blacklist ads for certain websites, most ad-blocker users just retain the default behavior of blocking ads on all websites \cite{adblockinggames}, which may perhaps be due to usability issues in configuring ad-blockers \cite{adblockusability}. By preventing ads from being shown, ad-blockers pose a threat to the advertising industry, as well as websites which rely on advertising revenue \cite{adblockinggames}. % Some websites such as Hulu have responded to this by detecting the presence of ad-blocking software, and requesting that users disable their ad-blockers, though writers of ad-blocker.
+In surveys, users of ad-blockers cite ``distracting animations and sounds'', and ``offensive/inappropriate ad content'' as their top reasons for blocking ads \cite{adblockinggames}. Although ad-blocking software can be configured to selectively whitelist/blacklist ads for certain websites, most ad-blocker users just retain the default behavior of blocking ads on all websites \cite{adblockinggames}, which may perhaps be due to usability issues in configuring ad-blockers \cite{adblockusability}. %By preventing ads from being shown, ad-blockers pose a threat to the advertising industry, as well as websites which rely on advertising revenue \cite{adblockinggames}. % Some websites such as Hulu have responded to this by detecting the presence of ad-blocking software, and requesting that users disable their ad-blockers, though writers of ad-blocker.
 
 % TODO Today's ad-blockers simply blank out or remove advertisements. With Edvertisements, we aimed to make use of the space to benefit the end user's goals.
 
@@ -280,7 +282,7 @@ One type of quiz presents a noun in English, and asks the user to select the cor
 \label{fig:quiz2}
 \end{figure}
 
-We opted to use this multiple-choice quiz format, because it tests the user's knowledge with a minimal amount of interaction -- the user simply clicks on a word to answer. Once the user answers a quiz correctly, a new quiz testing a different word is shown. Thus, users can use an edvertisement to continue study vocabulary for as long as they wish to.
+We opted to use this multiple-choice quiz format, because it tests the user's knowledge with a minimal amount of interaction -- the user simply clicks on a word to answer. Once the user answers a quiz correctly, a new quiz testing a different word is shown. Thus, users can use an Edvertisement to continue study vocabulary for as long as they wish to.
 
 % A picture is also presented alongside the foreign-language word, to help learners visually remember them. Prior research has shown that flashcards showing a picture along with the text allow learners to learn vocabulary better than text-only flashcards \cite{multimediavocabulary}. We focus on nouns, because they are the most common type of word -- the majority of words in the Oxford English dictionary are nouns \cite{microlearning} -- and they are relatively easy to visualize. This is the same quiz style used by Duolingo to introduce nouns.
 
@@ -289,6 +291,8 @@ We opted to use this multiple-choice quiz format, because it tests the user's kn
  \subsection{Quiz Generation}
 
 Our words and definitions were taken from the Nouns section of Wiktionary's 1000 Basic Japanese Words list. We excluded loanwords that users would easily recognize (\textit{pinku}=pink), and words that are homographs when romanized (\textit{hana}=flower or nose). We focus on nouns, because they are the most common type of word \cite{microlearning}. % -- the majority of words in the Oxford English dictionary are nouns % FeedLearn can optionally show the word in the native script (kana/kanji for Japanese), or display a picture of the word. However, we did not show these in our user study, because our users could not read Japanese scripts, and not all words can be visualized with a picture (ex: year).
+
+% \pagebreak
 
 \subsection{Spaced Repetition}
 
