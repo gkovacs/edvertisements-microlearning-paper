@@ -292,7 +292,7 @@ We opted to use this multiple-choice quiz format, because it tests the user's kn
 
 Our words and definitions were taken from the Nouns section of Wiktionary's 1000 Basic Japanese Words list. We excluded loanwords that users would easily recognize (\textit{pinku}=pink), and words that are homographs when romanized (\textit{hana}=flower or nose). We focus on nouns, because they are the most common type of word \cite{microlearning}. % -- the majority of words in the Oxford English dictionary are nouns % FeedLearn can optionally show the word in the native script (kana/kanji for Japanese), or display a picture of the word. However, we did not show these in our user study, because our users could not read Japanese scripts, and not all words can be visualized with a picture (ex: year).
 
-% \pagebreak
+\pagebreak
 
 \subsection{Spaced Repetition}
 
@@ -325,7 +325,7 @@ We recruited 12 users who had not previously studied Japanese but were intereste
 \begin{figure}
 \centering
 \includegraphics[width=1.0\columnwidth]{feedlearn-link-screenshot}
-\caption{The control condition in our user study inserted a link into users' Facebook feeds that led them to a site where they could do vocabulary quizzes}
+\caption{The control condition in our user study inserted a link into users' Facebook feeds that led them to a site where they could do quizzes.}
 \label{fig:control}
 \end{figure}
 
@@ -341,7 +341,7 @@ Users were assigned to one of two conditions:
 
 \begin{compactitem}
 \item Users in the \textit{in-feed quiz} condition had quizzes inserted directly in their feeds, as shown in \autoref{fig:feedlearn}.
-\item Users in the \textit{link} condition had links inserted into their feed which led them to a site where they could do the quizzes, as shown in \autoref{fig:control}.
+\item Users in the \textit{link} condition were shown links to a site where they could do the quizzes, as shown in \autoref{fig:control}.
 \end{compactitem}
 
 Apart form the different items (quizzes/links) inserted into the feed, the questions and quiz interfaces were identical in the two conditions. In both conditions, the items were inserted at a rate of 1 quiz/link per 10 feed items. % We chose this rate because it was approximately the rate at which we observed sponsored content and advertisements to appear in our feeds.
@@ -350,7 +350,9 @@ Apart form the different items (quizzes/links) inserted into the feed, the quest
 
 \subsection{Procedure}
 
-The study was conducted entirely online. First, users took a pre-test on the words we were intending to teach them, where they tried matching the 50 Japanese words to their 50 English definitions. Then they installed our Chrome extension and used it to study the 50 words for a week. After a week, we asked users to do the post-test, which had the same format as the pre-test.
+The study was conducted entirely online. First, users took a pre-test where they tried matching the 50 Japanese words to their 50 English definitions. Then they installed our Chrome extension and used it to study the 50 words for a week. After a week, we asked users to do the post-test, which had the same format as the pre-test.
+
+% The study was conducted entirely online. First, users took a pre-test on the words we were intending to teach them, where they tried matching the 50 Japanese words to their 50 English definitions. Then they installed our Chrome extension and used it to study the 50 words for a week. After a week, we asked users to do the post-test, which had the same format as the pre-test.
 
 \section{Results}
 
@@ -367,7 +369,7 @@ Average vocabulary pre-test and post-test scores are shown in \autoref{fig:vocab
 
 \subsection{Engagement With Edvertisements}
 
-The number of times users practiced answering quizzes is shown in \autoref{fig:event-logs}. We also kept track of ``study sessions'', which we defined as the number of times the user clicked on the link to visit the external website (in the link condition), or first answered a quiz that was inserted into their feed (in the in-quiz condition). % We also show number of answers and sessions normalized by the number of feed insertions to normalize for amounts of Facebook use.
+The number of times users practiced answering quizzes is shown in \autoref{fig:event-logs}. We also kept track of ``study sessions'', which we defined as the number of times the user clicked on the link to visit the website (in the link condition), or first engaged with an Edvertisement (in the in-quiz condition). % We also show number of answers and sessions normalized by the number of feed insertions to normalize for amounts of Facebook use.
 
 \begin{figure}
 \centering
@@ -388,15 +390,25 @@ Edvertisements are interactive microlearning tasks that we can show to users as 
 
 In our user study, we inserted Edvertisements teaching vocabulary into users' Facebook feeds. We found that users engaged with and learned from Edvertisements, and that engagement rates were higher when the quizzes could be done without leaving their feeds.
 
-Our current implementation inserts Edvertisements into Facebook feeds, and replaces web advertisements with them. There are other online recreational contexts where we might show users Edvertisements -- for example, between youtube videos, chapters of a e-book, or in their email.
+Our current implementation inserts Edvertisements into Facebook feeds, and replaces web advertisements with them. There are other online contexts where we might show users Edvertisements -- for example, between Youtube videos, chapters of a e-book, or in their email. Although we have focused on microlearning, Edvertisements could also be used to remind people to do other small, beneficial tasks as they are idly surfing the web -- for example, encouraging people to  do a small exercise, or complete an item on their to-do list. % brush their teeth, do a small exercise, or complete an item on their to-do list.
 
-Although we have focused on microlearning vocabulary, Edvertisements might also be a vehicle for reminding people to do other small, beneficial tasks as they are idly surfing the web -- for example, encouraging people to brush their teeth, do a small exercise, or complete an item on their to-do list.
+Other directions for future work include making Edvertisements more personalized and contextually relevant, based on the user's browsing history and their social network. For example, if it is your Chinese friend's birthday and your browsing habits indicate that you are learning Chinese, we might show an Edvertisement in your Facebook feed teaching you how to wish him happy birthday in Chinese. Or if you are reading an anti-vaccination webpage, an Edvertisement might teach you scientific facts about vaccines, showing the names of your friends who have also completed that Edvertisement. Or if many of your friends run, we might show you an Edvertisement about the health benefits of running, showing your friends' recent runs as part of the Edvertisement. % Or if you are reading an anti-vaccination webpage, an Edvertisement might teach you scientific facts about vaccines.
 
-Another direction for future work includes making the Edvertisements contextually relevant to the page they are being inserted into. For example, if it is your Chinese friend's birthday, your Facebook feed might show an Edvertisement teaching you how to wish him happy birthday in Chinese. Or if you are reading an anti-vaccination webpage, an Edvertisement might teach you scientific facts about vaccines.
+Production of Edvertisements and monetization is another area of future work. One potential approach would be sponsored Edvertisements -- for example, a local gym might sponsor an Edvertisement which teaches you a workout routine, hoping it'll encourage you to visit their gym.
+
+Users are growing frustrated at distracting, irrelevant advertisements on webpages and in their social feeds. Edvertisements aims to help address this issue, by re-claiming the spaces for purposes that will benefit the end user.
+
+% Users are growing frustrated at distracting, irrelevant advertisements on webpages and in their social feeds. Edvertisements aims to help address this issue, by re-claiming the spaces for purposes that will benefit the end user. %, such as microlearning.
+
+% One question that remains is who will produce the de
+
+% We also envision that social learning features could be introduced to Edvertisements. For example, users might be placed into groups around topics of common interest, and send Edvertisements they liked to their friends.
 
 % TODO Discuss potential social aspects of Edvertisements. Might people send them to their friends?
 
-Like the problem posed by ad-blockers today, an issue with replacing web advertisements with Edvertisements is that websites will be unable to monetize their content. Monetization is another area of future work. One potential approach would be sponsored Edvertisements -- for example, a local gym might sponsor an Edvertisement which teaches you a workout routine, hoping it'll encourage you to visit their gym more. % Alternatively, one might investigate effects of having a mix of Edvertisements and normal ads. It would be interesting if, for example, the presence of Edvertisements starts making people pay more attention to web advertising in general.
+% Like the problem posed by ad-blockers today, an issue with replacing web advertisements with Edvertisements is that websites will be unable to monetize their content. Monetization is another area of future work. One potential approach would be sponsored Edvertisements -- for example, a local gym might sponsor an Edvertisement which teaches you a workout routine, hoping it'll encourage you to visit their gym. % Alternatively, one might investigate effects of having a mix of Edvertisements and normal ads. It would be interesting if, for example, the presence of Edvertisements starts making people pay more attention to web advertising in general.
+
+% We have presented 
 
 % Just like the problem posed by ad-blockers today, an issue with entirely replacing web advertisements with Edvertisements is that websites will be unable to monetize their content. Making this system acceptable and appealing to advertisers is another area of future work. One potential approach would be sponsored Edvertisements -- for example, a local gym might sponsor an Edvertisement which teaches you an workout routine, hoping it'll encourage you to visit their gym more. Alternatively, one might investigate effects of replacing only some of the ads, and having a mix of Edvertisements and traditional advertisements. It would be interesting if, for example, the presence of Edvertisements starts making people pay more attention to web advertising in general.
 
