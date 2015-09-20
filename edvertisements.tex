@@ -115,7 +115,8 @@
 \end{figure}
 
 \begin{abstract}
-Many long-term goals, such as learning a language, require people to spend a small amount of time each day to achieve them. At the same time, people regularly surf the web and read social news feeds in their spare time. We have built a browser extension that teaches vocabulary in the context of Facebook feeds and arbitrary websites, by showing users interactive quizzes they can answer without leaving the website. On Facebook, the quizzes are shown as part of the news feed, while on other sites, the quizzes are shown where advertisements would normally appear. In our user study, we looked at the effectiveness of inserting microlearning tasks into social news feeds. We compared vocabulary learning rates when interactive quizzes were inserted directly into feeds, versus inserting links that lead them to quizzes. Our results suggest that users engage with and learn from our inserted quizzes, and engagement is higher when they can be done directly inside their feeds.
+Many long-term goals, such as learning a language, require people to regularly practice every day to achieve mastery. At the same time, people regularly surf the web and read social news feeds in their spare time. We have built a browser extension that teaches vocabulary to users the context of Facebook feeds and arbitrary websites, by showing users interactive quizzes they can answer without leaving the website. On Facebook, the quizzes are shown as part of the news feed, while on other sites, the quizzes appear where advertisements normally would. In our user study, we examined the effectiveness of inserting microlearning tasks into social news feeds. We compared vocabulary learning rates when interactive quizzes were inserted directly into feeds, versus inserting links that lead them to quizzes. Our results suggest that users engage with and learn from our embedded quizzes, and engagement increases when the quizzes can be done directly within their feeds.
+% Many long-term goals, such as learning a language, require people to spend a small amount of time each day to achieve them. At the same time, people regularly surf the web and read social news feeds in their spare time. We have built a browser extension that teaches vocabulary in the context of Facebook feeds and arbitrary websites, by showing users interactive quizzes they can answer without leaving the website. On Facebook, the quizzes are shown as part of the news feed, while on other sites, the quizzes are shown where advertisements would normally appear. In our user study, we looked at the effectiveness of inserting microlearning tasks into social news feeds. We compared vocabulary learning rates when interactive quizzes were inserted directly into feeds, versus inserting links that lead them to quizzes. Our results suggest that users engage with and learn from our inserted quizzes, and engagement is higher when they can be done directly inside their feeds.
 %Many long-term goals, such as learning a language, require people to spend a small amount of time each day to achieve them. At the same time, people regularly surf the web and read social news feeds in their spare time. We have built a browser extension that teaches vocabulary in the context of Facebook feeds and arbitrary websites, by showing users interactive quizzes they can answer without leaving the website. On Facebook, the quizzes are shown as part of the news feed, while on other sites, the quizzes are shown where advertisements would normally appear. In our preliminary user study, we looked at the effectiveness of inserting microlearning tasks into social news feeds. We compared Japanese vocabulary learning rates when interactive quizzes were inserted directly into feeds, versus inserting links that lead them to quizzes. Our results suggest that users engage with and learn vocabulary from our inserted quizzes, and they engage more with microlearning tasks when they can be done directly inside their feeds.
 % In our preliminary user study, we find that over the course of a week, we are able to teach students an average of 13 new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is more than the 4 vocabulary words learned if we insert links leading them to visit an external site to study, as is done by current Facebook apps.
 % Unlike apps like Duolingo posting accomplishments in users' feeds, FeedLearn gives friends a simple call to action and allows them to participate in their friends' learning processes.
@@ -131,15 +132,22 @@ Many long-term goals, such as learning a language, require people to spend a sma
 
 \section{Introduction}
 
+% we should first talk about the problem: the difficulty and importance of getting people to regularly do learning tasks. darren's papers had some citations
+% People want to learn new languages, but the commitment is too much effort for them, especially when regular practice is a prerequisite.
+
 People spend large amounts of time surfing the web and reading social news feeds on sites like Facebook.
 American adults spend an average of 27 hours per month browsing the web \cite{nielsen2014}.
 71\% of American adults with an internet connection use Facebook. Of these, 63\% visit Facebook at least once a day, and 40\% visit it multiple times per day \cite{socialmediaupdate}. Among American college students, 90\% use Facebook \cite{collegefacebook2}, spending an average of 30 minutes per day on it \cite{collegefacebook}. Social news feeds are widely used - over half of college students who use Facebook report reading their Facebook news feeds 5-7 days per week \cite{collegefacebook}. % Social news feeds and % Clearly, Facebook news feeds present an opportunity for influencing the behavior of users.
 
 In this paper, we present Edvertisements, interactive microlearning tasks which we show to users as they browse the web and read their Facebook feeds. We implemented a Chrome extension which shows Edvertisements in two ways:
 
+% In this paper, we present Edvertisements, interactive microlearning tasks which we show to users as they browse the web and read their Facebook feeds. We implemented a Chrome extension which shows Edvertisements in two ways:
+
 \begin{compactitem}
-\item On Facebook, Edvertisements are inserted into the feed, alongside regular feed items.
-\item On other sites, Edvertisements are shown in locations where advertisements would normally appear.
+\item On Facebook, the extension embeds Edvertisements directly into the feed alongside regular posts.
+%\item On Facebook, Edvertisements are inserted into the feed, alongside regular feed items.
+\item On other sites, Edvertisements appear in areas where advertisements would normally appear.
+% \item On other sites, Edvertisements are shown in locations where advertisements would normally appear.
 \end{compactitem}
 
 \pagebreak
@@ -189,6 +197,8 @@ Compared to the learning contexts used by existing work, we believe that recreat
 %Spaced repetition is a technique designed to help learners retain information by having them review items at regular intervals \cite{karpicke2011spaced}. A class of applications that exploit this are flashcards, which split information into independent chunks that are scheduled for review based on factors such as mastery and recency of review. There have been a number of algorithms and models designed for optimizing learners' retention of the material via spaced repetition \cite{optimalschedule} \cite{memreflex}.
 
 \subsection{Using Social News Feeds as a Persuasive Technology}
+
+% should probably cite some of nir eyal and bj fogg's stuff about triggers. ie, to form habits, need motivation, ability, and a trigger -- our in-feed quizzes are the magic trigger that will get people to learn.
 
 Many apps attempt to use Facebook feeds as a persuasive technology, to help users form study habits. For example, apps like Duolingo can broadcast users' study progress on the platform, inviting the user's friends to participate in the activity. However, there are many caveats with such applications auto-posting messages on users' feeds. Messages auto-posted by applications receive less attention from the user's friends, compared to messages posted by actual users. Viewers may perceive these posts negatively, ignoring them \cite{socialsharing}.
 
