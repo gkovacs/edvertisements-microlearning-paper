@@ -155,8 +155,8 @@ In this paper, we present \textit{Edvertisements}, which shows interactive micro
 Our research questions are:
 
 \begin{compactitem}
-\item Do users engage and learn from Edvertisements that we insert into their Facebook feeds?
-\item Do users engage and learn more with Edvertisements if they can do the microlearning tasks without leaving their Facebook feeds (compared to external links)?
+\item Do users engage with and learn from Edvertisements that we insert into their Facebook feeds?
+\item Do users engage more with Edvertisements if they can do the microlearning tasks without leaving their Facebook feeds (compared to external links)?
 % \item Does having Edvertisements where users can do the microlearning tasks without leaving their Facebook feeds result in higher learning outcomes?
 % \item Does the regularity and frequency with which users visit Facebook make it suitable for microlearning?
 %\item Are people more likely to learn if they are shown small, easily actionable learning tasks in the social feed. %, instead of messages emphasizing friends' overall achievements?
@@ -166,7 +166,9 @@ Our research questions are:
 %\item Does the selection process result in something useful?
 \end{compactitem}
 
-In our user study, we examined engagement and vocabulary acquisition when Edvertisments were inserted into users' Facebook feeds, and the effects of being able to do the microlearning tasks in-place. We found that there was high engagement with Edvertisements, users had improved post-test results after a week, and that engagement was higher when Edvertisements could be done in-place.
+In our user study, we examined engagement and vocabulary acquisition rates after embedding Edvertisements into users' Facebook feeds. We found that users interacted frequently with Edvertisements, improved their post-test results after a week, and engaged more readily with Edvertisements when they did not have to leave their social news feeds.
+
+% In our user study, we examined engagement and vocabulary acquisition when Edvertisments were inserted into users' Facebook feeds, and the effects of being able to do the microlearning tasks in-place. We found that there was high engagement with Edvertisements, users had improved post-test results after a week, and that engagement was higher when Edvertisements could be done in-place.
 
 % In our user study, we looked at engagement and vocabulary acquisition when Edvertisments were inserted into users' Facebook feeds. We also compared the effects of being able to do the microlearning tasks in place, as opposed to having to click a link to go to an external website. We found that there was high engagement with Edvertisements, users had improved post-test results after a week, and that engagement was higher when Edvertisements could be done in-place. % without leaving the feed. % users answered more quizzes when they could do so without leaving the feed, and they learned more new words on average over a week. 
 
@@ -178,7 +180,7 @@ In our user study, we examined engagement and vocabulary acquisition when Edvert
 
 \subsection{Microlearning}
 
-Microlearning is the strategy of studying frequently in short intervals throughout the day. It has been used for applications such as foreign vocabulary learning via mobile apps \cite{microlearning} \cite{micromandarin}. A potential drawback of needing a separate app for microlearning is that it requires the user to develop a habit of interrupting their routine to open an app to study. % Although they may give users reminders when they should practice, these reminders might come at the wrong time, or be ignored.
+Microlearning is the strategy of studying frequently in short intervals throughout the day. Several mobile applications use microlearning to teach subjects such as foreign language vocabulary \cite{microlearning} \cite{micromandarin}; however, these require the user to interrupt their routine to open a dedicated app for studying. % . A potential drawback of needing a separate app for microlearning is that it requires the user to develop a habit of interrupting their routine to open an app to study. % Although they may give users reminders when they should practice, these reminders might come at the wrong time, or be ignored.
 
 Some systems try to solve this problem by embedding microlearning into other contexts. There are games in which users complete learning tasks while playing \cite{carriearcade}, video players which teach vocabulary while users watch foreign-language videos \cite{smartsubtitles}, screensavers that display facts while the screen is idle \cite{screensaver}, and chat clients that show vocabulary while the user is chatting \cite{cai2015wait}.
 
@@ -219,7 +221,7 @@ These posts are examples of \textit{triggers}, which are calls to action designe
 \subsection{Web Advertising and Ad-Blocking}
 
 % Web advertisements are another example of a trigger, though in their case the habit they are attempting to drive is consumption of a product.
-Although advertisements are an important revenue source for websites, surveys indicate that 77\% of users rarely ever click on ads, and 69\% express interest in skipping or blocking ads \cite{adblockinggames}. 5\% of all internet users use ad blockers, which are browser extensions that prevent web ads from being displayed \cite{adblockinggoesmainstream}. Ad-blocking is especially common among Chrome and Firefox users -- 30\% of Chrome users, and 35\% of Firefox users, have installed an ad-blocker \cite{adblockinggoesmainstream}.
+Although advertisements are an important revenue source for websites, surveys indicate that 77\% of users rarely ever click on ads, and 69\% express interest in skipping or blocking ads \cite{adblockinggames}. 5\% of web users use ad blockers, which are browser extensions that prevent web ads from being displayed \cite{adblockinggoesmainstream}. Ad-blocking is especially common among Chrome and Firefox users -- 30\% of Chrome users and 35\% of Firefox users have installed an ad-blocker \cite{adblockinggoesmainstream}.
 
 In surveys, users of ad-blockers cite ``distracting animations and sounds'', and ``offensive/inappropriate ad content'' as their top reasons for blocking ads \cite{adblockinggames}. Even users who do not install ad blockers tend to avoid looking at ads, a phenomenon known as ``banner blindness''. In fact, web surfers click on less than 0.5\% of advertisements -- a number which has been declining ever since banner ads were introduced in 1994 \cite{whypeopleavoidadvertising}. Edvertisements repurpose this space for microlearning.
 
@@ -262,7 +264,7 @@ In surveys, users of ad-blockers cite ``distracting animations and sounds'', and
 
 \section{Edvertisements System}
 
-Our system is a Chrome extension that inserts microlearning tasks -- in our case, vocabulary quizzes -- into users' Facebook feeds, and as they are browsing the web. Although we originally implemented the browser extension for Chrome, we have also ported it to Firefox, and our technique can be implemented on any browser that supports extensions (Chrome, Firefox, Edge, Safari, etc). Our system features a variety of microlearning tasks for learning vocabulary in multiple languages, but in this paper we will focus on learning Japanese vocabulary.
+Our system is a Chrome extension that can show users microlearning tasks -- in our case, vocabulary quizzes -- in users' Facebook feeds, and as they are browsing the web. Although we originally implemented the browser extension for Chrome, we have also ported it to Firefox, and our technique can be implemented on any browser that supports extensions (Chrome, Firefox, Edge, Safari, etc). Our system features a variety of microlearning tasks for learning vocabulary in multiple languages, but in this paper we will focus on learning Japanese vocabulary.
 
 % IAB standard container
 
