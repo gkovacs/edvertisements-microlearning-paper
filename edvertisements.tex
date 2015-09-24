@@ -117,7 +117,7 @@ We compared vocabulary learning rates when we inserted interactive quizzes into 
 %In our first study, we find that over the course of 2 weeks, we are able to teach students N new vocabulary words by injecting microlearning tasks into their Facebook feeds. This is X\% more than a control condition where we ask them to visit a separate website and ask them to study the words on their own time, and Y\% more than a control condition where we show friends' achievements via feed updates. In our second study, we find that giving friends the ability to participate in the social learning process, by suggesting words for their friends to learn, leads to increased engagement. They learn more words in a condition where the words learned are suggested to the group by their friends, which is X\% more than when they select words to choose by themselves, and Y\% more than when the suggestions are automatic.
 \end{abstract}
 
-\keywords{microlearning; social feeds; facebook; language learning}
+\keywords{microlearning; social feeds; facebook; advertisements; language learning}
 
 \category{H.5.2.}{User Interfaces}{Graphical user interfaces (GUI)}{}{}
 % \category{H.5.m.}{Information Interfaces and Presentation (e.g. HCI)}{Miscellaneous}
@@ -129,20 +129,27 @@ We compared vocabulary learning rates when we inserted interactive quizzes into 
 % we should first talk about the problem: the difficulty and importance of getting people to regularly do learning tasks. darren's papers had some citations
 % People want to learn new languages, but the commitment is too much effort for them, especially when regular practice is a prerequisite.
 
-People spend large amounts of time surfing the web and reading social news feeds on sites like Facebook.
-American adults spend an average of 27 hours per month browsing the web \cite{nielsen2014}.
-71\% of American adults with an internet connection use Facebook. Of these, 63\% visit Facebook at least once a day, and 40\% visit it multiple times per day \cite{socialmediaupdate}. Among American college students, 90\% use Facebook \cite{collegefacebook2}, spending an average of 30 minutes per day on it \cite{collegefacebook}. Social news feeds are widely used - over half of college students who use Facebook report reading their Facebook news feeds 5-7 days per week \cite{collegefacebook}. % Social news feeds and % Clearly, Facebook news feeds present an opportunity for influencing the behavior of users.
+Many people have long-term learning goals, such as wanting to learn a new language. However, they often fail to achieve these goals, citing the lack of time to study as a major reason \cite{micromandarin, kam2007localized, oxford1994language}.
+Nevertheless, people do have spare time, as shown by their recreational web browsing and social network usage. % regularly visit social networking sites and browse the web.
+% Americans spend 27 hours per month web browsing \cite{nielsen2014},  %-- they spend large amounts of time surfing the web and reading social news feeds on sites like Facebook.
+American adults spend an average of 27 hours per month surfing the web \cite{nielsen2014}.
+71\% of American adults use Facebook, and 63\% of these visit Facebook daily \cite{socialmediaupdate}. 90\% of American college students use Facebook, spending on average of 30 minutes on Facebook each day \cite{collegefacebook2}. % Hence, we aim to help people study during their recreational web usage. % Among American college students, 90\% use Facebook \cite{collegefacebook2}, spending an average of 30 minutes per day on it \cite{collegefacebook}. % Social news feeds are widely used - over half of college students who use Facebook report reading their Facebook news feeds 5-7 days per week \cite{collegefacebook}. % Social news feeds and % Clearly, Facebook news feeds present an opportunity for influencing the behavior of users.
+
+%American adults spend an average of 27 hours per month browsing the web \cite{nielsen2014}.
+%71\% of American adults with an internet connection use Facebook. Of these, 63\% visit Facebook at least once a day, and 40\% visit it multiple times per day \cite{socialmediaupdate}. Among American college students, 90\% use Facebook \cite{collegefacebook2}, spending an average of 30 minutes per day on it \cite{collegefacebook}. Social news feeds are widely used - over half of college students who use Facebook report reading their Facebook news feeds 5-7 days per week \cite{collegefacebook}. % Social news feeds and % Clearly, Facebook news feeds present an opportunity for influencing the behavior of users.
 
 % Some notes about microlearning and learning would be useful here: daily practice matters, burden in opening separate apps and context switch, etc. 
 
-In this paper, we present \textit{Edvertisements}, which shows interactive microlearning tasks to users as they browse the web and read their Facebook feeds. We implemented a Chrome extension which shows Edvertisements in two ways:
+In this paper, we present \textit{Edvertisements}, which help users learn during their spare time by showing them interactive microlearning tasks as they surf the web and read their Facebook feeds. We implemented a Chrome extension which shows Edvertisements in two ways:
+
+% In this paper, we present \textit{Edvertisements}, which shows interactive microlearning tasks to users as they browse the web and read their Facebook feeds. We implemented a Chrome extension which shows Edvertisements in two ways:
 
 % In this paper, we present Edvertisements, interactive microlearning tasks which we show to users as they browse the web and read their Facebook feeds. We implemented a Chrome extension which shows Edvertisements in two ways:
 
 \begin{compactitem}
-\item On Facebook, the extension embeds Edvertisements directly into the feed alongside regular posts.
+\item On Facebook, the extension embeds Edvertisements directly into the feed alongside regular posts (see \autoref{fig:feedlearn}).
 %\item On Facebook, Edvertisements are inserted into the feed, alongside regular feed items.
-\item On other sites, Edvertisements appear in areas where advertisements would normally appear.
+\item On other sites, the extension replaces web advertisements with Edvertisements (see \autoref{fig:edvertisements}). % shows Edvertisements in areas where advertisements would normally appear. % Edvertisements appear in areas where advertisements would normally appear.
 % \item On other sites, Edvertisements are shown in locations where advertisements would normally appear.
 \end{compactitem}
 
@@ -176,13 +183,13 @@ In our user study, we examined engagement and vocabulary acquisition rates after
 
 \subsection{Microlearning}
 
-Microlearning is the strategy of studying frequently in short intervals throughout the day. Several mobile applications use microlearning to teach subjects such as foreign language vocabulary \cite{microlearning} \cite{micromandarin}; however, these require the user to interrupt their routine to open a dedicated app for studying. % . A potential drawback of needing a separate app for microlearning is that it requires the user to develop a habit of interrupting their routine to open an app to study. % Although they may give users reminders when they should practice, these reminders might come at the wrong time, or be ignored.
+Microlearning is the strategy of studying frequently in short intervals throughout the day \cite{gassler2004integrated}. Several mobile applications use microlearning to teach material such as foreign language vocabulary \cite{microlearning, micromandarin}; however, these require the user to interrupt their routine to open a dedicated app for studying. % . A potential drawback of needing a separate app for microlearning is that it requires the user to develop a habit of interrupting their routine to open an app to study. % Although they may give users reminders when they should practice, these reminders might come at the wrong time, or be ignored.
 
 Some systems try to solve this problem by embedding microlearning into other contexts. There are games in which users complete learning tasks while playing \cite{carriearcade}, video players which teach vocabulary while users watch foreign-language videos \cite{smartsubtitles}, screensavers that display facts while the screen is idle \cite{screensaver}, and chat clients that show vocabulary while the user is chatting \cite{cai2015wait}.
 
 % Compared to the learning contexts used by existing work, we believe that recreational web surfing and Facebook feeds are especially good opportunities for microlearning, because:
 
-Compared to the learning contexts of existing systems, we believe that web surfing and Facebook feeds are especially potent locations for embedding microlearning, because:
+Compared to the learning contexts used by existing systems, we believe that web surfing and Facebook feeds are especially potent locations for embedding microlearning, because:
 
 \begin{compactitem}
 \item Unlike playing educational games or watching foreign-language videos, visiting Facebook is a daily habit for 45\% of American adults with an internet connection \cite{socialmediaupdate} %, and the majority of college students \cite{collegefacebook}.
